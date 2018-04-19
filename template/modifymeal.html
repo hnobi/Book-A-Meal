@@ -15,14 +15,17 @@
       <nav>
         <div class="nav-card-container">
           <a class="navbar-brand" href="index.html">Book-A-Meal</a>
-
-          <ul class="center">
+          <ul class="right">
             <li>
-              <!-- <input type="text" placeholder="search for your favourite meal" id="search">
-              <a href="index.html">home</a> -->
+              <a href="menu.html">Menu</a>
+            </li>
+            <li>
+              <a href="addmeal.html">Add Meal</a>
             </li>
 
-
+            <li>
+              <a href="index.html">Home</a>
+            </li>
           </ul>
         </div>
       </nav>
@@ -31,7 +34,7 @@
     <main class="fluid">
       <div class="row">
         <div class="menu-sidenav col-2">
-          <h2>Menu</h2>
+          <h2 style="background-color:teal; color:whitesmoke;font-family: 'Trebuchet MS', 'Lucida Sans Unicode'">Menu</h2>
           <a id="Monday" href="#" class="week-days">Monday</a>
           <a id="Tuesday" href="#" class="week-days active">Tuesday</a>
           <a id="Wednessday" href="#" class="week-days">Wednessday</a>
@@ -41,11 +44,14 @@
           <a id="Sunday" href="#" class="week-days">Sunday</a>
         </div>
         <div class="selected-day col-9">
-          <h2 id="day">Tuesday</h2>
+          <h2 class="btn add-btn">
+            <a href=""></a>
+            Add meal</h2>
+
 
 
           <!-- =================================Photo of meals ================================================ -->
-          <div class="col-4">
+          <div class="col-4" style="background-color: rgb(243, 232, 232)">
             <div class="card">
               <img src="public/img/13.jpg" alt="FIRST" style="width:100%">
               <div class="card-container">
@@ -58,8 +64,14 @@
                 <p class="price">
                   <span>&#8358;</span> 999.00
                 </p>
+                <div>
+                  <button class="btn edit-btn">Edit</button>
+                  <button class="btn delete-btn">Delete</button>
+                </div>
               </div>
-              <button class="btn view-btn">View</button>
+
+
+              <!-- <button class="btn view-btn">View</button> -->
             </div>
 
           </div>
@@ -76,8 +88,11 @@
                 <p class="price">
                   <span>&#8358;</span> 999.00
                 </p>
+                <div>
+                  <button class="btn edit-btn">Edit</button>
+                  <button class="btn delete-btn">Delete</button>
+                </div>
               </div>
-              <button class="btn view-btn">View</button>
             </div>
           </div>
           <div class="col-4">
@@ -93,8 +108,11 @@
                 <p class="price">
                   <span>&#8358;</span> 239.00
                 </p>
+                <div>
+                  <button class="btn edit-btn">Edit</button>
+                  <button class="btn delete-btn">Delete</button>
+                </div>
               </div>
-              <button class="btn view-btn">View</button>
             </div>
           </div>
           <!--  -->
@@ -111,8 +129,11 @@
                 <p class="price">
                   <span>&#8358;</span> 999.00
                 </p>
+                <div>
+                  <button class="btn edit-btn">Edit</button>
+                  <button class="btn delete-btn">Delete</button>
+                </div>
               </div>
-              <button class="btn view-btn">View</button>
             </div>
           </div>
           <div class="col-4">
@@ -128,8 +149,11 @@
                 <p class="price">
                   <span>&#8358;</span> 999.00
                 </p>
+                <div>
+                  <button class="btn edit-btn">Edit</button>
+                  <button class="btn delete-btn">Delete</button>
+                </div>
               </div>
-              <button class="btn view-btn">View</button>
             </div>
           </div>
           <div class="col-4">
@@ -145,8 +169,11 @@
                 <p class="price">
                   <span>&#8358;</span> 800.00
                 </p>
+                <div>
+                  <button class="btn edit-btn">Edit</button>
+                  <button class="btn delete-btn">Delete</button>
+                </div>
               </div>
-              <button class="btn view-btn">View</button>
             </div>
           </div>
         </div>
