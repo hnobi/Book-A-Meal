@@ -35,10 +35,89 @@ html{
 vertical-align: middle;
 line-height: 40px; 
 }
+/* #mainn{
+  margin:0 auto;
+} */
+
+.menu-sidenav {
+  min-width: 150px;
+  position: fixed;
+  /* z-index: 1; */
+  /* top: 100px; */
+  left: 10px;
+  background: #eee;
+  overflow-x: hidden;
+  padding: 8px 0;
+   margin-top: 60px;
+   color: #555;
+}
+#day{
+  margin: 40px auto;
+  text-align: center;
+  background-color:#555;
+  color:white;
+}
+.title{
+ color: rgb(202, 110, 34);
+ font-size: 20px;
+}
+.description{
+  font-size: 15px;
+}
+.price{
+  font-size: 15px;
+  margin-top:5px;
+  color:black;
+  font-weight: bolder;
+}
+
+.view-btn{
+  background-color:teal;
+  width:  100%;
+  margin-top:5px;
+  
+}
+
+.menu-sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+}
+
+.menu-sidenav a.active{
+  background-color:rgb(202, 110, 34);
+  color:white;
+}
+.menu-sidenav a:hover{
+  background-color:rgb(202, 110, 34);
+  color:white;
+}
+
+.selected-day{
+  margin-left: 240px; 
+  font-size: 28px; 
+  padding: 0px 10px;
+}
 
 
 /*=================|Reuseable CSS|===================== */
 /* ----------------------------------------------------- */
+.btn{
+  border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover{box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);}
+
+
+
 footer {
   width: 100%;
   background-color:white;
@@ -68,6 +147,11 @@ hr{
   clear: both;
   display: table;
 }
+.fluid::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 h1{
   margin:0;
   font-size: 40px;
@@ -77,7 +161,7 @@ h1{
 .headline{
   text-align: center;
 margin:10px auto;
-/* font-family: 'Courier New', Courier, monospace; */
+font-family: 'Courier New', Courier, monospace; 
 }
 .row{
   max-width :100%; 
@@ -115,6 +199,8 @@ hr{
   margin-top:50px;
   margin-bottom: 20px; 
 }
+
+
 
 /*==================Reuseable CSS Ends==================== */
 
@@ -168,7 +254,7 @@ nav.center{
 
 nav ul li a:hover{
   background-color:white;
-  color:rgb(233, 16, 16);
+  color:rgb(202, 110, 34);
   border-radius: 10px;
   
 }
@@ -180,13 +266,6 @@ nav ul li a.link,nav ul li a.visited  {
 }
 /* =========================================navbar Ends============================================== */
 
-/* @media screen and (max-width: 600px){
-  .navbar-brand, 
-  nav ul li {float: none;}
-  main{
-    margin-top:100px;
-  } 
-} */
 
 /* big tablet -   */
 @media screen and (max-width: 1140px){
