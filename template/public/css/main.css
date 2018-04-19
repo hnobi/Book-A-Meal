@@ -9,6 +9,7 @@ html{
   /* text-rendering: optimizeLegibility; */
   font-size: 20px;
 }
+/* landing  page */
 
 #landing-page {
   background-image:linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url('../img/bg.jpg');
@@ -35,24 +36,27 @@ html{
 vertical-align: middle;
 line-height: 40px; 
 }
-/* #mainn{
-  margin:0 auto;
-} */
+/* landing page ends */
+
+
+/* user menu page */
 
 .menu-sidenav {
   min-width: 150px;
+  top:50px;
   position: fixed;
-  /* z-index: 1; */
-  /* top: 100px; */
   left: 10px;
   background: #eee;
   overflow-x: hidden;
   padding: 8px 0;
    margin-top: 60px;
-   color: #555;
+  
+}
+.week-days{
+  color: teal;
 }
 #day{
-  margin: 40px auto;
+  margin: 80px auto;
   text-align: center;
   background-color:#555;
   color:white;
@@ -99,10 +103,19 @@ line-height: 40px;
   font-size: 28px; 
   padding: 0px 10px;
 }
-
-
+/* user menu page ends */
+.update-btn{
+  background-color:teal;
+  /* width:  200px; */
+  margin-top:5px;
+  border-radius: 5%;
+  float: right;;
+  }
 /*=================|Reuseable CSS|===================== */
 /* ----------------------------------------------------- */
+.mt{
+  margin-top:200px;
+}
 .btn{
   border: none;
     color: white;
@@ -113,9 +126,13 @@ line-height: 40px;
     font-size: 16px;
     cursor: pointer;
 }
-
+img{
+  width: 260px;
+  height: 150px;
+}
 .btn:hover{box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);}
 
+  
 
 
 footer {
@@ -156,7 +173,9 @@ h1{
   margin:0;
   font-size: 40px;
   letter-spacing: 2px;
-  
+}
+h3{
+  color:rgb(202, 110, 34);
 }
 .headline{
   text-align: center;
@@ -182,7 +201,6 @@ font-family: 'Courier New', Courier, monospace;
 [class*="col-"] {
   float: left;
   padding: 15px;
-  /* border: 1px solid red; */
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -264,6 +282,26 @@ nav ul li a.link,nav ul li a.visited  {
   color:green;
   
 }
+.card-container{
+  margin-left:10px;
+}
+/* table */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+th{
+  background-color: rgb(202, 110, 34);
+  color:white
+}
+
 /* =========================================navbar Ends============================================== */
 
 
@@ -276,12 +314,24 @@ nav ul li a.link,nav ul li a.visited  {
 
 /* small tablet - less than or equaL 767px */
 @media screen and (max-width: 767px){
-  .col-4{width:50%;}
-}
+  .selected-day,.col-4{width:50%;
+    position: relative;
+  }
+ .menu-sidenav{
+   width:40%;
+   margin: 100px  auto;
+  
+  }
+ .col-9 .col-4{
+  width: 100%;
+  margin:0 auto 0 45px;
+} 
+ }
+
 
 /* small phone - less than 480px */
 @media screen and (max-width: 480px){
-  .col-4 {width: 100%;}
+ .col-2,.col-9 , .col-4 {width: 100%;}
    
   nav ul li {
     float: none;
@@ -298,6 +348,16 @@ nav ul li a.link,nav ul li a.visited  {
     font-size: 30px;
     font-style: oblique;
   font-weight: bold;
-  
+  }
+  .menu-sidenav{
+    position: relative;
+     width:100%;
+     margin-top:10px auto ;
+  }
+  .selected-day{
+   margin:0 auto; 
+  }
+  #day{
+    margin:0px;
   }
 }
