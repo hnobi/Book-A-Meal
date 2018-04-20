@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Modify|Delete</title>
+  <link rel="stylesheet" href="./public/css/main.css" type="text/css">
+  <link rel="stylesheet" href="./public/css/modal.css" type="text/css">
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+      <nav>
+        <div class="nav-card-container">
+          <a class="navbar-brand" href="index.html">Book-A-Meal</a>
+          <ul class="right">
+            </li>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="menu.html">Menu</a>
+            </li>
+            <li>
+              <a href="addmeal.html">Add Meal</a>
+            </li>
+            <li>
+              <a href="select-meal.html">Select Meal</a>
+            </li>
+            <li>
+              <a href="order_summary.html">Order summary</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="fluid">
+      <div class="row">
+        <div class="menu-sidenav col-2">
+          <h2 style="background-color:teal; color:whitesmoke;font-family: 'Trebuchet MS', 'Lucida Sans Unicode'">Menu</h2>
+          <a id="Monday" href="#" class="week-days">Monday</a>
+          <a id="Tuesday" href="#" class="week-days active">Tuesday</a>
+          <a id="Wednessday" href="#" class="week-days">Wednessday</a>
+          <a id="Thursday" href="#" class="week-days">Thursday</a>
+          <a id="friday" href="#" class="week-days">Friday</a>
+          <a id="Saturday" href="#" class="week-days">Saturday</a>
+          <a id="Sunday" href="#" class="week-days">Sunday</a>
+        </div>
+        <div class="selected-day col-9">
+          <a href="addmeal.html" style="text-decoration:none;">
+            <h2 class="btn add-btn">Add meal</h2>
+          </a>
+
+
+
+
+
+          <!-- =================================Photo of meals ================================================ -->
+          <div class="col-4 deem-color">
+            <div class="card">
+              <img src="public/img/13.jpg" alt="FIRST" style="width:100%">
+              <div class="card-container">
+                <h5>
+                  <b class="title">Pounded yam & egunsi</b>
+                </h5>
+                <p class="description">Pounded Yam is the most stretchy of all the Nigerian fufu recipes and Egusi soup is popular in Western Africa.
+                  The soup is thickened with ground melon, gourd, or squash seeds
+                </p>
+                <p class="price">
+                  <span>&#8358;</span> 999.00
+                </p>
+                <div>
+                  <button class="btn edit-btn" id="edit">Edit</button>
+                  <button class="btn delete-btn">Delete</button>
+                </div>
+              </div>
+
+
+              <!-- <button class="btn view-btn">View</button> -->
+            </div>
+
+          </div>
+          <div class="col-4 deem-color">
+            <div class="card">
+              <img src="public/img/7.jpg" alt="FIRST" style="width:100%">
+              <div class="card-container">
+                <h5>
+                  <b class="title">Pounded & egunsi</b>
+                </h5>
+                <p class="description">Pounded Yam is the most stretchy of all the Nigerian fufu recipes and Egusi soup is popular in Western Africa.
+                  The soup is thickened with ground melon, gourd, or squash seeds
+                </p>
+                <p class="price">
+                  <span>&#8358;</span> 999.00
+                </p>
+                <div>
+                  <button class="btn edit-btn" id="edit">Edit</button>
+                  <button class="btn delete-btn">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 deem-color">
+            <div class="card">
+              <img src="public/img/11.jpg" alt="FIRST" style="width:100%">
+              <div class="card-container">
+                <h5>
+                  <b class="title">Pounded & egunsi</b>
+                </h5>
+                <p class="description">Pounded Yam is the most stretchy of all the Nigerian fufu recipes and Egusi soup is popular in Western Africa.
+                  The soup is thickened with ground melon, gourd, or squash seeds
+                </p>
+                <p class="price">
+                  <span>&#8358;</span> 239.00
+                </p>
+                <div>
+                  <button class="btn edit-btn">Edit</button>
+                  <button class="btn delete-btn">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-4 deem-color">
+            <div class="card">
+              <img src="public/img/8.jpg" alt="FIRST" style="width:100%">
+              <div class="card-container">
+                <h5>
+                  <b class="title">Pounded & egunsi</b>
+                </h5>
+                <p class="description">Pounded Yam is the most stretchy of all the Nigerian fufu recipes and Egusi soup is popular in Western Africa.
+                  The soup is thickened with ground melon, gourd, or squash seeds
+                </p>
+                <p class="price">
+                  <span>&#8358;</span> 999.00
+                </p>
+                <div>
+                  <button class="btn edit-btn">Edit</button>
+                  <button class="btn delete-btn">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 deem-color">
+            <div class="card">
+              <img src="public/img/10.jpg" alt="FIRST" style="width:100%">
+              <div class="card-container">
+                <h5>
+                  <b class="title">Pounded & egunsi</b>
+                </h5>
+                <p class="description">Pounded Yam is the most stretchy of all the Nigerian fufu recipes and Egusi soup is popular in Western Africa.
+                  The soup is thickened with ground melon, gourd, or squash seeds
+                </p>
+                <p class="price">
+                  <span>&#8358;</span> 999.00
+                </p>
+                <div>
+                  <button class="btn edit-btn">Edit</button>
+                  <button class="btn delete-btn">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 deem-color">
+            <div class="card">
+              <img src="public/img/5.jpg" alt="FIRST" style="width:100%">
+              <div class="card-container">
+                <h5>
+                  <b class="title">Pounded & egunsi</b>
+                </h5>
+                <p class="description">Pounded Yam is the most stretchy of all the Nigerian fufu recipes and Egusi soup is popular in Western Africa.
+                  The soup is thickened with ground melon, gourd, or squash seeds
+                </p>
+                <p class="price">
+                  <span>&#8358;</span> 800.00
+                </p>
+                <div>
+                  <button class="btn edit-btn">Edit</button>
+                  <button class="btn delete-btn">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- =================================Photo of meals Ends ================================================ -->
+      </div>
+  </div>
+  </main>
+  </div>
+
+  <footer>
+    <hr>
+    <div>
+      <small id="copywrite">&copy;2018
+        <span style="color:rgb(255, 0, 128)">BOOK-A-MEAL</span>, Andela Nigeria. All rights reserved.</small>
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- =========================modal edit ============================-->
+
+  <div id="editModal" class="modal">
+    <div class="form-sizing">
+      <form class="content" action="/signin" method="post">
+        <h2>Edit Meal</h2>
+        <div class="container">
+          <input type="text" placeholder="Meal title" name="title" value="sallad">
+          <input type="text" placeholder="Description" name="description" value="good for your lunch">
+          <input type="text" placeholder="Price" name="price" value="1000">
+          <input type="text" placeholder="quatnity" name="quatity" value="4">
+          <button type="submit">Save</button>
+          <button type="button" id="cancleEdit" class="cancelbtn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- =========================modal edit ends ============================-->
+
+
+  <script src="public/js/main.js"> 
+
+
+
+  </script>
+</body>
+
+</html>
