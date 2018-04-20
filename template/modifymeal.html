@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Modify|Delete</title>
   <link rel="stylesheet" href="./public/css/main.css" type="text/css">
+  <link rel="stylesheet" href="./public/css/modal.css" type="text/css">
 </head>
 
 <body>
@@ -16,15 +17,21 @@
         <div class="nav-card-container">
           <a class="navbar-brand" href="index.html">Book-A-Meal</a>
           <ul class="right">
+            </li>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
             <li>
               <a href="menu.html">Menu</a>
             </li>
             <li>
               <a href="addmeal.html">Add Meal</a>
             </li>
-
             <li>
-              <a href="index.html">Home</a>
+              <a href="select-meal.html">Select Meal</a>
+            </li>
+            <li>
+              <a href="order_summary.html">Order summary</a>
             </li>
           </ul>
         </div>
@@ -67,7 +74,7 @@
                   <span>&#8358;</span> 999.00
                 </p>
                 <div>
-                  <button class="btn edit-btn">Edit</button>
+                  <button class="btn edit-btn" id="edit">Edit</button>
                   <button class="btn delete-btn">Delete</button>
                 </div>
               </div>
@@ -91,7 +98,7 @@
                   <span>&#8358;</span> 999.00
                 </p>
                 <div>
-                  <button class="btn edit-btn">Edit</button>
+                  <button class="btn edit-btn" id="edit">Edit</button>
                   <button class="btn delete-btn">Delete</button>
                 </div>
               </div>
@@ -192,6 +199,35 @@
         <span style="color:rgb(255, 0, 128)">BOOK-A-MEAL</span>, Andela Nigeria. All rights reserved.</small>
     </div>
   </footer>
+
+
+
+
+
+  <!-- =========================modal edit ============================-->
+
+  <div id="editModal" class="modal">
+    <div class="form-sizing">
+      <form class="content" action="/signin" method="post">
+        <h2>Sign in</h2>
+        <div class="container">
+          <input type="text" placeholder="Meal title" name="title" value="sallad">
+          <input type="text" placeholder="Description" name="description" value="good for your lunch">
+          <input type="text" placeholder="Price" name="price" value="1000">
+          <input type="text" placeholder="quatnity" name="quatity" value="4">
+          <button type="submit">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- =========================modal edit ends ============================-->
+
+
+  <script src="public/js/main.js"> 
+
+
+
+  </script>
 </body>
 
 </html>

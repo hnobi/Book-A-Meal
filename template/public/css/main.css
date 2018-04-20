@@ -401,7 +401,16 @@ input[type="submit"]{
   height: 40px;
 }
 
-
+td a{
+  color:red;
+  text-decoration: none;
+    font-weight: bolder; 
+}
+td a:hover{
+  color:green;
+  text-decoration: none;
+    font-weight: bolder; 
+}
 
 
 /* forms end */
