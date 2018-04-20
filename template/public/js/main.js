@@ -7,46 +7,30 @@ var btn2 = document.getElementById('btn2');
 btn2.addEventListener("click", function () {
   document.getElementById('signin').style.display = 'none';
 });
-
-
-
-
-
-var modal = document.getElementById('signin');
-
 // When the user clicks anywhere outside of the modal, close it
+var signinModal = document.getElementById('signin');
 window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  if (event.target == signinModal) {
+    // signinModal.style.display = "none";
+    document.getElementById('signin').style.display = 'none';
   }
 }
+// 
 
-
-
-// // Get the modal
-// var modal = document.getElementById('signin-modal');
-// window.onclick = function (event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// }
-
-
-// var signIn = document.getElementById('signin-btn');
-
-// signIn.addEventListener('click', signIn);
-// function signIn() {
-//   document.getElementById('signin-modal').style.display = 'block'
-// }
-
-
-// // When the user clicks anywhere outside of the modal, close it
-
-// var cancelSignin = document.getElementById('calcel-signin');
-// cancelSignin.addEventListener('click', cancleForm());
-// function cancleForm() {
-//   document.getElementById('signin-modal').style.display = 'none'
-// }
+var btn3 = document.getElementById('btn3'); btn3.addEventListener("click", function () {
+  document.getElementById('signup').style.display
+    = 'block';
+});
+var btn4 = document.getElementById('btn4'); btn4.addEventListener("click", function () {
+  document.getElementById('signup').style.display
+    = 'none';
+});
+var signupModal = document.getElementById('signup');
+window.onclick = function (event) {
+  if (event.target == signupModal) {
+    signupModal.style.display = "none";
+  }
+}
 
 
 

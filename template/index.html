@@ -28,7 +28,7 @@
               <a id="btn1">Login</a>
             </li>
             <li>
-              <a href="signup.html">Sign up</a>
+              <a id="btn3">Sign up</a>
             </li>
           </ul>
         </div>
@@ -168,10 +168,53 @@
     </div>
   </div>
   <!-- =========================modal signin ends ============================-->
-  <script src="public/js/main.js">
-    // Get the modal
+  <!-- =========================modal signup ============================-->
 
-  </script>
+  <div id="signup" class="modal">
+    <div style="max-width: 500px;margin:auto">
+      <form class="content" action="/signup" method="post">
+        <h2>Sign up</h2>
+        <div class="container">
+          <label for="firstname">
+            <b>Firstname</b>
+          </label>
+          <input type="text" placeholder="Firstname" name="firstname">
+
+          <label for="lastname">
+            <b>Lastname</b>
+          </label>
+          <input type="password" placeholder="Lastname" name="lastname">
+          <label for="username">
+            <b>Username</b>
+          </label>
+          <input type="text" placeholder="Enter Username" name="username" required>
+          <label for="password">
+            <b>Password</b>
+          </label>
+          <input type="password" placeholder="Enter Password" name="password" required>
+
+          <button type="submit">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" id="btn4" class="cancelbtn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- =========================modal signup ends ============================-->
+
+
+
+
+
+
+
+
+  <script src="public/js/main.js"> </script>
 </body>
 
 </html>
