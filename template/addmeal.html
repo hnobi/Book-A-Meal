@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./public/css/main.css" type="text/css">
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+      <nav>
+        <div class="nav-card-container">
+          <a class="navbar-brand" href="index.html">Book-A-Meal</a>
+          <ul class="right">
+            <li>
+              <a href="menu.html">Menu</a>
+            </li>
+            <li>
+              <a href="modifymeal.html">Modify|Delete Meal</a>
+            </li>
+
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="mt center">
+      <main class="non-fluid ">
+        <div class="row">
+          <div class="column-10" styl="background-color: fuchsia">
+            <div>
+              <h1>Add meal</h1>
+              <form action="/addmeal" method="post" class="form-input">
+                <br>
+                <label>Title:</label>
+
+                <br>
+                <input type="text" name="title">
+                <br>
+                <label>Description:</label>
+                <br>
+                <input type="text" name="description">
+                <br>
+                <label>Price:</label>
+                <br>
+                <input type="text" name="price">
+                <br>
+                <br>
+                <input type="submit" value="Submit">
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+      <hr>
+      <div>
+        <small id="copywrite">&copy;2018
+          <span style="color:rgb(255, 0, 128)">BOOK-A-MEAL</span>, Andela Nigeria. All rights reserved.</small>
+      </div>
+    </footer>
+</body>
+
+</html>

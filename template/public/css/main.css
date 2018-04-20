@@ -297,6 +297,9 @@ nav ul li{
 nav.center{
   text-align: center
 }
+.center{
+  text-align: center
+}
 
 
 
@@ -331,8 +334,65 @@ th{
   background-color: rgb(202, 110, 34);
   color:white
 }
+.deem-color{
+background-color: rgb(243, 232, 232);
+}
 
 /* =========================================navbar Ends============================================== */
+
+
+/* forms */
+.column-9 {
+  width: 75%;
+  margin:auto;
+}
+
+.form-input{
+  background-color:teal;
+  width:50%;
+  margin:0 auto;
+}
+
+.form-input input{
+  max-width:100%;
+  font-size: 20px;
+  color:rgb(241, 191, 25);
+  height:40px
+}
+label{
+  color:white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+input[type="submit"]{
+  border-radius: 10px;
+  width:20%;
+  background-color:rgb(241, 191, 25);
+  color:white;
+  margin-bottom: 16px;
+}
+/* input[type="submit"]{
+  margin-top:16px
+} */
+
+/* forms end */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* big tablet -   */
@@ -340,13 +400,23 @@ th{
 }
 /* small tablet to big tablet - from 768 to 1023px */
 @media screen and (max-width: 1023px){
+  input[type="submit"]{
+    width:50%;
+   }
 }
+
 
 /* small tablet - less than or equaL 767px */
 @media screen and (max-width: 767px){
-  .selected-day,.col-4{width:50%;
+  .selected-day,.col-4{
+    width:50%;
     position: relative;
   }
+    .form-input, .column-9 {
+      width: 100%;
+  
+    }
+  
  .menu-sidenav{
    width:40%;
    margin: 100px  auto;
@@ -356,7 +426,10 @@ th{
   width: 100%;
   margin:0 auto 0 45px;
 } 
+input[type="submit"]{
+  width:90%;
  }
+}
 
 
 /* small phone - less than 480px */
@@ -394,9 +467,13 @@ th{
   }
   .add-btn{
     margin: 0 auto 20px;
-  
-  
-
   }
-
+  .form-input, .column-9 {
+    width: 100%;
+  
+  }
+  input[type="submit"]{
+    width:90%;
+   
+  }
 }
