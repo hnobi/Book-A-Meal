@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="./public/css/main.css" type="text/css">
+  <!-- modal csss -->
+  <link rel="stylesheet" href="./public/css/modal.css" type="text/css">
 </head>
 
 <body>
@@ -23,7 +25,7 @@
               <a href="#contact">Contact</a>
             </li>
             <li>
-              <a href="signin.html">Login</a>
+              <a id="btn1">Login</a>
             </li>
             <li>
               <a href="signup.html">Sign up</a>
@@ -56,9 +58,9 @@
             <img src="public/img/13.jpg" alt="FIRST" style="width:100%">
             <div class="container">
               <h4>
-                <b>John Doe</b>
+                <b>Pounded yam & egunsi</b>
               </h4>
-              <p>Architect & Engineer</p>
+              <p> the most stretchy of all </p>
             </div>
           </div>
 
@@ -133,6 +135,43 @@
         <span style="color:rgb(255, 0, 128)">BOOK-A-MEAL</span>, Andela Nigeria. All rights reserved.</small>
     </div>
   </footer>
+  <!-- =========================modal signin ============================-->
+
+  <div id="signin" class="modal">
+    <div style="max-width: 500px;margin:auto">
+      <form class="content" action="/signin" method="post">
+        <h2>Sign in</h2>
+        <div class="container">
+          <label for="username">
+            <b>Username</b>
+          </label>
+          <input type="text" placeholder="Enter Username" name="username" required>
+
+          <label for="password">
+            <b>Password</b>
+          </label>
+          <input type="password" placeholder="Enter Password" name="password" required>
+
+          <button type="submit">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" id="btn2" class="cancelbtn">Cancel</button>
+          <span class="password">Forgot
+            <a href="#">password?</a>
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- =========================modal signin ends ============================-->
+  <script src="public/js/main.js">
+    // Get the modal
+
+  </script>
 </body>
 
 </html>

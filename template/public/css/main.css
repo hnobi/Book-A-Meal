@@ -6,7 +6,6 @@
 html{
   background-color:#fff;
   color:#555;
-  /* text-rendering: optimizeLegibility; */
   font-size: 20px;
 }
 /* landing  page */
@@ -22,12 +21,10 @@ html{
   width: 100%;
   font-size:20px ;
   color:brown;
-  /* text-align: center; */
 }
 
 .page-text{
   color:white;
- /* max-width :100%; */
   position: absolute;
  top:60%;
  left: 50%;
@@ -356,7 +353,7 @@ background-color: rgb(243, 232, 232);
 .form-input input{
   max-width:100%;
   font-size: 20px;
-  color:rgb(241, 191, 25);
+  color:rgb(202, 110, 34);
   height:40px
 }
 label{
@@ -371,29 +368,8 @@ input[type="submit"]{
   color:white;
   margin-bottom: 16px;
 }
-/* input[type="submit"]{
-  margin-top:16px
-} */
 
 /* forms end */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* big tablet -   */
 @media screen and (max-width: 1140px){
