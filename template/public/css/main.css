@@ -138,6 +138,7 @@ line-height: 40px;
 .mt{
   margin-top:200px;
 }
+.mtop{margin-top:100px;}
 .btn{
   border: none;
     color: white;
@@ -344,17 +345,45 @@ background-color: rgb(243, 232, 232);
   margin:auto;
 }
 
-.form-input{
+/* .form-input{
   background-color:teal;
   width:50%;
   margin:0 auto;
+} */
+
+/* .form-input input{
+  max-width:100%;
+  f;
+  color:rgb(202, 110, 34);
+  height:40px */
+.form-sizing{
+  max-width: 500px;
+  margin:auto;
+
+}
+input[type=text], input[type=password] {
+  font-size: 20px;
+  width: 100%;
+  color:teal;
+  font-size: 20px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  height:40px 
 }
 
-.form-input input{
-  max-width:100%;
-  font-size: 20px;
-  color:rgb(202, 110, 34);
-  height:40px
+.form-content {
+  background-color: teal;
+  margin: 5% auto 15% auto; 
+  border: 1px solid #888;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  
+}
+.form-content input[type=text]{
+  width: 80%
 }
 label{
   color:white;
@@ -367,7 +396,13 @@ input[type="submit"]{
   background-color:rgb(241, 191, 25);
   color:white;
   margin-bottom: 16px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  height: 40px;
 }
+
+
+
 
 /* forms end */
 
