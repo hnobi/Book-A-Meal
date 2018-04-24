@@ -30,14 +30,22 @@ export default class MenusControllers {
       });
 
   }
-
-
-
-
-
-
-
-
+  /**
+   * 
+   * 
+   * @static
+   * @param {any} req 
+   * @param {any} res 
+   * @returns success with the list of all available menu or error
+   * @memberof MenusControllers
+   */
+  static showAllMenu(req, res) {
+    if (Menus.length !== 0) {
+      return res.status(200)
+        .json(Menus);
+    }
+    return res.status(400).json({ message: 'No Menu available' });
+  }
 
 
 }

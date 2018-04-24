@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route('/menu')
   .post(ValidateMenu.addMenuValidator, MenuController.addMenu)
-
+  .get(MenuController.showAllMenu)
 
 
 
