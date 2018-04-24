@@ -1,6 +1,7 @@
 
 import express from 'express';
 import bodyParser from 'body-parser';
+import apiRoute from './routes/apiRoutes';
 
 const app = express();
 const port = parseInt((process.env.PORT), 10) || 3000;
@@ -17,6 +18,18 @@ app.get('/', (req, res) => {
 
     });
 });
+
+app.use('/api/v1', apiRoute);
+app.use('/api/v1/', (req, res) => {
+  res.status(404);
+  res.json({
+    status: 'Failed',
+    message: 'Page not found'
+  });
+});
+
+
+
 
 
 
