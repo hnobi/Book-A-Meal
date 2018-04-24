@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/hnobi/Book-A-Meal/issues"
   },
-  "homepage": "https://github.com/hnobi/Book-A-Meal#readme"
+  "homepage": "https://github.com/hnobi/Book-A-Meal#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
