@@ -1,0 +1,19 @@
+{
+  "name": "book-a-meal",
+  "version": "1.0.0",
+  "description": "Book-A-Meal is an application that allows customers to make food orders and helps the food\r vendor know what the customers want to eat.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hnobi/Book-A-Meal.git"
+  },
+  "author": "Hammed Noibi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hnobi/Book-A-Meal/issues"
+  },
+  "homepage": "https://github.com/hnobi/Book-A-Meal#readme"
+}
