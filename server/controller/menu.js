@@ -1,16 +1,25 @@
 import Menus from './../models/menu';
 
 export default class MenusControllers {
+  /**
+  * add menu to the existing events
+                       * @param {obj} req
+                       * @param {obj} res
+                       * @memberof MenusController
+                       * @return {obj} insertion error messages or success messages
+ * @class MenusControllers
+ */
   static addMenu(req, res) {
     const newId = Menus[Menus.length - 1].id + 1;
     const {
+      title,
       id,
-      Meals,
+      meals,
       date
     } = req.body;
     Menus.push({
       id: newId,
-      Meals,
+      meals,
       date
     });
     res.status(200)
