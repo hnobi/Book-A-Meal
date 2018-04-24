@@ -4,6 +4,7 @@
   "description": "Book-A-Meal is an application that allows customers to make food orders and helps the food\r vendor know what the customers want to eat.",
   "main": "index.js",
   "scripts": {
+    "start:dev": "nodemon --watch server --exec babel-node -- server/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,10 +18,12 @@
   },
   "homepage": "https://github.com/hnobi/Book-A-Meal#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.3"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1"
+    "babel-preset-env": "^1.6.1",
+    "nodemon": "^1.17.3"
   }
 }
