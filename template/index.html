@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./public/css/main.css" type="text/css">
+  <!-- modal csss -->
+  <link rel="stylesheet" href="./public/css/modal.css" type="text/css">
+</head>
+
+<body>
+  <div id="wrapper">
+    <header id="landing-page">
+      <nav>
+        <div class="nav-container">
+          <a class="navbar-brand" href="index.html">Book-A-Meal</a>
+          <ul class="right">
+            <li>
+              <a href="#home" class="active">Home</a>
+            </li>
+            <li>
+              <a href="menu.html">Order meal</a>
+            </li>
+            <li>
+              <a id="btn1">Login</a>
+            </li>
+            <li>
+              <a id="btn3">Sign up</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    </header>
+    <main>
+      <div class="page-text">
+        <h1>Welcome to Book-A-Meal</h1>
+        <p> The home of delicious and nourishing meal. Order for one now</p>
+        <input type="text" placeholder="search for your favourite meal" id="search">
+      </div>
+
+    </main>
+    <!-- Header Ends -->
+
+    <section class="non-fluid">
+
+      <h1 class="headline">
+        <u>Awesome meals avalaible for you </u>
+      </h1>
+      <div class="row">
+        <div class="col-4">
+
+          <!-- =================================Photo of meals ================================================ -->
+          <div class="card">
+            <img src="public/img/13.jpg" alt="FIRST" style="width:100%">
+            <div class="container">
+              <h4>
+                <b>Pounded yam & egunsi</b>
+              </h4>
+              <p> the most stretchy of all </p>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-4">
+          <div class="card">
+            <img src="public/img/7.jpg" alt="FIRST" style="width:100%">
+            <div class="container">
+              <h4>
+                <b>sweetbreads</b>
+              </h4>
+              <p>delicious and nourishing</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card">
+            <img src="public/img/11.jpg" alt="FIRST" style="width:100%">
+            <div class="container">
+              <h4>
+                <b>sweetbreads</b>
+              </h4>
+              <p>delicious and nourishing</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="row">
+        <div class="col-4">
+          <div class="card">
+            <img src="public/img/8.jpg" alt="FIRST" style="width:100%">
+            <div class="container">
+              <h4>
+                <b>sweetbreads</b>
+              </h4>
+              <p>delicious and nourishing</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card">
+            <img src="public/img/10.jpg" alt="FIRST" style="width:100%">
+            <div class="container">
+              <h4>
+                <b>sweetbreads</b>
+              </h4>
+              <p>delicious and nourishing</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card">
+            <img src="public/img/5.jpg" alt="FIRST" style="width:100%">
+            <div class="container">
+              <h4>
+                <b>sweetbreads</b>
+              </h4>
+              <p>delicious and nourishing</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- =================================Photo of meals Ends ================================================ -->
+    </section>
+  </div>
+
+  <footer>
+    <hr>
+    <div>
+      <small id="copywrite">&copy;2018
+        <span style="color:rgb(255, 0, 128)">BOOK-A-MEAL</span>, Andela Nigeria. All rights reserved.</small>
+    </div>
+  </footer>
+  <!-- =========================modal signin ============================-->
+
+  <div id="signin" class="modal">
+    <div class="form-sizing">
+      <form class="content" action="/signin" method="post">
+        <h2>Sign in</h2>
+        <div class="container">
+          <label for="username">
+            <b>Username</b>
+          </label>
+          <input type="text" placeholder="Enter Username" name="username" required>
+
+          <label for="password">
+            <b>Password</b>
+          </label>
+          <input type="password" placeholder="Enter Password" name="password" required>
+
+          <button type="submit">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" id="btn2" class="cancelbtn">Cancel</button>
+          <span class="password">Forgot
+            <a href="#">password?</a>
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- =========================modal signin ends ============================-->
+  <!-- =========================modal signup ============================-->
+
+  <div id="signup" class="modal">
+    <div style="max-width: 500px;margin:auto">
+      <form class="content" action="/signup" method="post">
+        <h2>Sign up</h2>
+        <div class="container">
+          <label for="firstname">
+            <b>Firstname</b>
+          </label>
+          <input type="text" placeholder="Firstname" name="firstname">
+
+          <label for="lastname">
+            <b>Lastname</b>
+          </label>
+          <input type="password" placeholder="Lastname" name="lastname">
+          <label for="username">
+            <b>Username</b>
+          </label>
+          <input type="text" placeholder="Enter Username" name="username" required>
+          <label for="password">
+            <b>Password</b>
+          </label>
+          <input type="password" placeholder="Enter Password" name="password" required>
+
+          <button type="submit">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" id="btn4" class="cancelbtn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- =========================modal signup ends ============================-->
+
+
+
+
+
+
+
+
+  <script src="public/js/signin_signup.js"> </script>
+</body>
+
+</html>

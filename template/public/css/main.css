@@ -1,0 +1,499 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  background-color:#fff;
+  color:#555;
+  font-size: 20px;
+}
+/* landing  page */
+
+#landing-page {
+  background-image:linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url('../img/bg.jpg');
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+#search{
+  height:50px;
+  width: 100%;
+  font-size:20px ;
+  color:brown;
+}
+
+.page-text{
+  color:white;
+  position: absolute;
+ top:60%;
+ left: 50%;
+ transform: translate(-50%,-50%);   
+ text-align: center;
+vertical-align: middle;
+line-height: 40px; 
+}
+/* landing page ends */
+
+
+/* user menu page */
+
+.menu-sidenav {
+  min-width: 150px;
+  top:50px;
+  position: fixed;
+  left: 10px;
+  background: #eee;
+  overflow-x: hidden;
+  padding: 8px 0;
+   margin-top: 60px;
+  
+}
+.week-days{
+  color: teal;
+}
+#day{
+  margin: 80px auto;
+  text-align: center;
+  background-color:#555;
+  color:white;
+}
+.title{
+ color: rgb(202, 110, 34);
+ font-size: 20px;
+}
+.description{
+  font-size: 15px;
+}
+.price{
+  font-size: 15px;
+  margin-top:5px;
+  color:black;
+  font-weight: bolder;
+}
+
+.view-btn{
+  background-color:teal;
+  width:  100%;
+  margin-top:5px;  
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px
+}
+.edit-btn{
+  background-color:green;
+  width:  40%;
+  margin-top:5px;  
+  float: left;
+  border-radius: 5px;
+  }
+.delete-btn{
+  background-color:rgb(221, 41, 41);
+  width:  40%;
+  margin-top:5px; 
+  float: right; 
+  border-radius: 5px;
+}
+
+.add-btn{
+    margin: 80px auto 20px;
+    text-align: center;
+    background-color:#555;
+    color:white;
+  }
+
+
+
+
+.menu-sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+}
+
+.menu-sidenav a.active{
+  background-color:rgb(202, 110, 34);
+  color:white;
+}
+.menu-sidenav a:hover{
+  background-color:rgb(202, 110, 34);
+  color:white;
+}
+
+.selected-day{
+  margin-left: 240px; 
+  font-size: 28px; 
+  padding: 0px 10px;
+}
+/* user menu page ends */
+.update-btn{
+  background-color:teal;
+  /* width:  200px; */
+  margin-top:5px;
+  border-radius: 5%;
+  float: right;
+  }
+/*=================|Reuseable CSS|===================== */
+/* ----------------------------------------------------- */
+.mt{
+  margin-top:200px;
+}
+.mtop{margin-top:100px;}
+.btn{
+  border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    font-size: 16px;
+    cursor: pointer;
+}
+img{
+  width: 260px;
+  height: 150px;
+}
+.btn:hover{box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);}
+
+  
+
+
+footer {
+  width: 100%;
+  background-color:white;
+  color:gray;
+  text-align: center;
+
+}
+hr{
+  border-style: solid;
+  border-color:rgb(31, 29, 29);
+  margin-top:50px;
+  margin-bottom: 20px; 
+}
+
+.fluid{
+  width:100%;
+  margin:0 auto;
+}
+
+.non-fluid{
+  width:80%;
+  background-color: snow;
+  margin:0 auto;
+}
+.non-fluid::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.fluid::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+h1{
+  margin:0;
+  font-size: 40px;
+  letter-spacing: 2px;
+}
+h2{
+  background-color:teal;
+   color:whitesmoke;font-family: 'Trebuchet MS', 'Lucida Sans Unicode'
+}
+h3{
+  color:rgb(202, 110, 34);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+.headline{
+  text-align: center;
+margin:10px auto;
+font-family: 'Courier New', Courier, monospace; 
+}
+.row{
+  max-width :100%; 
+  margin:0 auto;
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+hr{
+  border-style: solid;
+  border-color:rgb(31, 29, 29);
+  margin-top:50px;
+  margin-bottom: 20px; 
+}
+
+
+
+/*==================Reuseable CSS Ends==================== */
+
+
+/* =========================================|Navbar|============================================== */
+.navbar-brand{
+  margin-top: 5px;
+  float: left;
+  width: auto;
+  text-decoration: none;
+  color:white;
+  padding: 15px;
+  font-size: 30px;
+    font-style: oblique;
+  font-weight: bold;
+}
+
+nav{
+  z-index: 1;
+  width:100%;
+  position: fixed;
+  top: 0;
+   background-color:rgb(202, 110, 34); 
+   min-height: 50px;
+}
+nav ul{
+  list-style-type: none;
+  padding: 0;
+  opacity: 0.8; 
+  float: right;
+  margin-top: 10px; 
+}
+nav ul li{
+  display: inline-block;
+  margin-left: 30px; 
+}
+ nav ul li a{
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+   font-size: 16px;                                     /*[18/20 *100] 20px is html font i used */
+  padding: 14px 16px; 
+  font-weight: bold;
+
+} 
+nav.center{
+  text-align: center
+}
+.center{
+  text-align: center
+}
+
+
+
+nav ul li a:hover{
+  background-color:white;
+  color:rgb(202, 110, 34);
+  border-radius: 10px;
+  
+}
+
+nav ul li a.link,nav ul li a.visited  {
+  background-color: rgb(241, 191, 25);
+  color:green;
+  
+}
+.card-container{
+  margin-left:10px;
+}
+/* table */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+th{
+  background-color: rgb(202, 110, 34);
+  color:white
+}
+.deem-color{
+background-color: rgb(243, 232, 232);
+}
+
+/* =========================================navbar Ends============================================== */
+
+
+/* forms */
+.column-9 {
+  width: 75%;
+  margin:auto;
+}
+
+/* .form-input{
+  background-color:teal;
+  width:50%;
+  margin:0 auto;
+} */
+
+/* .form-input input{
+  max-width:100%;
+  f;
+  color:rgb(202, 110, 34);
+  height:40px */
+.form-sizing{
+  max-width: 500px;
+  margin:auto;
+
+}
+input[type=text], input[type=password] {
+  font-size: 20px;
+  width: 100%;
+  color:teal;
+  font-size: 20px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  height:40px 
+}
+
+.form-content {
+  background-color: teal;
+  margin: 5% auto 15% auto; 
+  border: 1px solid #888;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  
+}
+.form-content input[type=text]{
+  width: 80%
+}
+label{
+  color:white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+input[type="submit"]{
+  border-radius: 10px;
+  width:20%;
+  background-color:rgb(241, 191, 25);
+  color:white;
+  margin-bottom: 16px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  height: 40px;
+}
+
+td a{
+  color:red;
+  text-decoration: none;
+    font-weight: bolder; 
+}
+td a:hover{
+  color:green;
+  text-decoration: none;
+    font-weight: bolder; 
+}
+
+
+/* forms end */
+
+/* big tablet -   */
+@media screen and (max-width: 1140px){
+}
+/* small tablet to big tablet - from 768 to 1023px */
+@media screen and (max-width: 1023px){
+  input[type="submit"]{
+    width:50%;
+   }
+}
+
+
+/* small tablet - less than or equaL 767px */
+@media screen and (max-width: 767px){
+  .selected-day,.col-4{
+    width:50%;
+    position: relative;
+  }
+    .form-input, .column-9 {
+      width: 100%;
+  
+    }
+  
+ .menu-sidenav{
+   width:40%;
+   margin: 100px  auto;
+  
+  }
+ .col-9 .col-4{
+  width: 100%;
+  margin:0 auto 0 45px;
+} 
+input[type="submit"]{
+  width:90%;
+ }
+}
+
+
+/* small phone - less than 480px */
+@media screen and (max-width: 480px){
+ .col-2,.col-9 , .col-4 {width: 100%;}
+   
+  nav ul li {
+    float: none;
+    margin-left: 0;
+    display: block;
+    text-align: center;
+    margin-top:5px;
+    padding: 2px;
+  }
+
+  .navbar-brand{
+    float: right;
+    display: block;
+    font-size: 30px;
+    font-style: oblique;
+  font-weight: bold;
+  }
+  .menu-sidenav{
+    position: relative;
+     width:100%;
+     margin-top:10px auto ;
+
+
+  }
+  .selected-day{
+   margin:0 auto; 
+  }
+  #day{
+    margin:0px;
+  }
+  .add-btn{
+    margin: 0 auto 20px;
+  }
+  .form-input, .column-9 {
+    width: 100%;
+  
+  }
+  input[type="submit"]{
+    width:90%;
+   
+  }
+}
