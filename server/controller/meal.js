@@ -59,6 +59,20 @@ export default class MealControllers {
       }
     }
   }
-
-
+  /**
+   * 
+   * 
+   * @static showAllMealMea display all available or  read error mesage
+   * @param {any} req 
+   * @param {any} res 
+   * @returns 
+   * @memberof MealControllers
+   */
+  static showAllMealMeal(req, res) {
+    if (Meals.length !== 0) {
+      return res.status(200)
+        .json(Meals);
+    }
+    return res.status(400).json({ message: 'No events available' });
+  }
 }

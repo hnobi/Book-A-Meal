@@ -11,6 +11,9 @@ router.route('/menu')
 // meal route
 router.route('/meal')
   .post(ValidateMeal.addMealValidator, MealController.addMeal)
+  .get(MealController.showAllMealMeal)
+
+
 router.route('/meal/:mealId')
   .put(ValidateMeal.modifyMealValidator, MealController.modifyMeal)
   .delete(MealController.deleteMeal)
