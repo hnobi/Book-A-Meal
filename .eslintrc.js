@@ -26,7 +26,8 @@ module.exports = {
       "require": {
         "FunctionDeclaration": true,
         "MethodDefinition": true,
-        "ClassDeclaration": true
+        "ClassDeclaration": true,
+        "constructor": true,
       }
     }]
   }
