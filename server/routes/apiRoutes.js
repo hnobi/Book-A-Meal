@@ -13,14 +13,14 @@ router.route('/menu')
 // meal routes
 router.route('/meal')
   .post(ValidateMeal.addMealValidator, MealController.addMeal)
-  .get(MealController.showAllMealMeal)
+  .get(MealController.showAllMealMeal);
 
 
 router.route('/meal/:mealId')
   .put(ValidateMeal.modifyMealValidator, MealController.modifyMeal)
-  .delete(MealController.deleteMeal)
+  .delete(MealController.deleteMeal);
 
 // order routes
 router.route('/order')
-  .post(ValidateOrder.addOrderValidator OrderController.addOrder)
+  .post(ValidateOrder.addOrderValidator, OrderController.addOrder)
 export default router;

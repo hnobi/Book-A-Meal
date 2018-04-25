@@ -14,7 +14,17 @@ export default class ValidateOrders {
           message: 'All or some of the field is/are undefined',
         });
     } else if (!validator.isNumeric(price)) {
-
+      errors.price = 'price of ordered meal must be a number';
+    }
+    else if (!validator.isNumeric(quantity)) {
+      errors.quantity = 'quantity of ordered meal must be a number';
+    }
+    else if (!validator.isNumeric(totalPrice)) {
+      errors.totalPrice = 'totalPrice of ordered meal must be a number';
+    }
+    if (!isEmpty(errors)) {
+      return res.status(400)
+        .json(errors);
     }
     next()
   }
