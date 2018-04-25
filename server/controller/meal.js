@@ -24,7 +24,9 @@ export default class MealControllers {
       });
   }
   static modifyMeal(req, res) {
-    const { title, description, price, menuId } = req.body;
+    const {
+      title, description, price, menuId
+    } = req.body;
     for (let i = 0; i < Meals.length; i += 1) {
       if (Meals[i].id === parseInt(req.params.mealId, 10)) {
         Meals[i].title = (title) || Meals[i].title;
@@ -60,12 +62,12 @@ export default class MealControllers {
     }
   }
   /**
-   * 
-   * 
+   *
+   *
    * @static showAllMealMea display all available or  read error mesage
-   * @param {any} req 
-   * @param {any} res 
-   * @returns 
+   * @param {any} req
+   * @param {any} res
+   * @returns
    * @memberof MealControllers
    */
   static showAllMealMeal(req, res) {
