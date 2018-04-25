@@ -3,7 +3,6 @@ import MenuController from './../controller/menu';
 import MealController from './../controller/meal';
 import ValidateMenu from './../middleware/menuValidator'
 import ValidateMeal from './../middleware/mealValidator'
-
 const router = express.Router();
 // menus
 router.route('/menu')
@@ -13,7 +12,7 @@ router.route('/menu')
 router.route('/meal')
   .post(ValidateMeal.addMealValidator, MealController.addMeal)
 router.route('/meal/:mealId')
-  .put(MealController.modifyMeal)
+  .put(ValidateMeal.modifyMealValidator, MealController.modifyMeal)
 
 
 
