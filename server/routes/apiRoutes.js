@@ -13,6 +13,7 @@ router.route('/meal')
   .post(ValidateMeal.addMealValidator, MealController.addMeal)
 router.route('/meal/:mealId')
   .put(ValidateMeal.modifyMealValidator, MealController.modifyMeal)
+  .delete(MealController.deleteMeal)
 
 
 
