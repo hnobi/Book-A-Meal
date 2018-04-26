@@ -22,7 +22,7 @@ export default class MenusControllers {
       meals,
       date
     });
-    res.status(200)
+    res.status(201)
       .json({
         status: 'Success',
         message: 'Successfully added new menus',
