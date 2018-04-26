@@ -125,6 +125,24 @@ describe('All test cases for Book-A-Meal application', () => {
           done();
         });
     });
+    it('should return `400` status code with `res.body` error message', (done) => {
+      request
+        .put('/api/v1/meal/10')
+        .set('Content-Type', 'application/json')
+        .send({
+          title: 'rice',
+          description: ' beans rice with a good taste',
+          price: 365,
+          menuId: 3
+        })
+        .expect(400)
+        .end((err, res) => {
+          expect(res.body.status).to.equal('Failed');
+          expect(res.body.message).to.equal('Meal id does not exist');
+          if (err) done(err);
+          done();
+        });
+    });
   });
 });
 
