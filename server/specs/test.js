@@ -92,20 +92,35 @@ describe('All test cases for Book-A-Meal application', () => {
         });
     });
   });
-  describe('All test cases for adding menu for the day', () => {
-    it('Should  create a meal for a specific day and return `200` status code', (done) => {
-      request.post('/api/v1/meal')
+  describe('Test case for getting all meal', () => {
+    it('Should list all available meal', (done) => {
+      request.get('/api/v1/meal')
+        .set('Content-Type', 'application/json')
+        .expect(200)
+        .end((err, res) => {
+          expect(res.body).to.be.a('array');
+          if (err) done(err);
+          done();
+        });
+    });
+  });
+
+
+  describe('All test cases for updating a meal', () => {
+    it('should return `200` status code with `res.body` success messages', (done) => {
+      request
+        .put('/api/v1/meal/1')
         .set('Content-Type', 'application/json')
         .send({
-          title: 'friend rice',
-          description: ' yellow rice with a good taste',
-          price: parseInt('345'),
-          menuId: parseInt('3')
+          title: 'rice',
+          description: ' beans rice with a good taste',
+          price: 365,
+          menuId: 3
         })
         .expect(200)
         .end((err, res) => {
-          expect(res.body.status).to.equal('Success');
-          expect(res.body.message).to.equal('Successfully added new meals');
+          expect('Success').to.equal(res.body.status);
+          expect('Successfully updated  a Meal').to.equal(res.body.message);
           if (err) done(err);
           done();
         });
