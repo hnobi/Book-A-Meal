@@ -22,5 +22,7 @@ router.route('/meal/:mealId')
 
 // order routes
 router.route('/order')
-  .post(ValidateOrder.addOrderValidator, OrderController.addOrder)
+  .post(ValidateOrder.addOrderValidator, OrderController.addOrder);
+router.route('/order/:orderId')
+  .put(OrderController.modifyOrder)
 export default router;

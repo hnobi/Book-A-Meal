@@ -43,9 +43,5 @@ export default class ValidateMenus {
       }
       next();
     }
-  }
-
-
-
-
+  
 }
