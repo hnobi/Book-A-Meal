@@ -92,5 +92,24 @@ describe('All test cases for Book-A-Meal application', () => {
         });
     });
   });
+  describe('All test cases for adding menu for the day', () => {
+    it('Should  create a meal for a specific day and return `200` status code', (done) => {
+      request.post('/api/v1/meal')
+        .set('Content-Type', 'application/json')
+        .send({
+          title: 'friend rice',
+          description: ' yellow rice with a good taste',
+          price: parseInt('345'),
+          menuId: parseInt('3')
+        })
+        .expect(200)
+        .end((err, res) => {
+          expect(res.body.status).to.equal('Success');
+          expect(res.body.message).to.equal('Successfully added new meals');
+          if (err) done(err);
+          done();
+        });
+    });
+  });
 });
 

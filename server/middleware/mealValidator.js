@@ -1,5 +1,4 @@
 import validator from 'validator';
-import isEmpty from 'lodash/isEmpty';
 
 export default class ValidateMeals {
   static addMealValidator(req, res, next) {
@@ -65,7 +64,7 @@ export default class ValidateMeals {
         errors.price = 'price of a meal must be a number';
       }
     }
-    if (!isEmpty(errors)) {
+    if (Object.keys(errors).length !== 0) {
       return res.status(400)
         .json(errors);
     }
