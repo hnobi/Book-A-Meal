@@ -62,6 +62,7 @@ describe('All test cases for Book-A-Meal application', () => {
         .end((err, res) => {
           expect(res.body.status).to.equal('Success');
           expect(res.body.message).to.equal('Successfully added new menus');
+          if (err) done(err);
           done();
         });
     });
@@ -79,6 +80,17 @@ describe('All test cases for Book-A-Meal application', () => {
         });
     });
   });
-
+  describe('Test cases for getting all menu', () => {
+    it('Should get all menus', (done) => {
+      request.get('/api/v1/menu')
+        .set('Content-Type', 'application/json')
+        .expect(200)
+        .end((err, res) => {
+          expect(res.body).to.be.a('array');
+          if (err) done(err);
+          done();
+        });
+    });
+  });
 });
 

@@ -30,7 +30,6 @@ export default class ValidateMeals {
       } else {
         errors.description = ' description is required';
       }
-
       if (!validator.isEmpty(price)) {
         if (!validator.isNumeric(price)) {
           errors.price = 'price of a meal must be a number';
@@ -72,7 +71,4 @@ export default class ValidateMeals {
     }
     next();
   }
-
-
-
 }

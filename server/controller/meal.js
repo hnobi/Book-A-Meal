@@ -16,12 +16,12 @@ export default class MealControllers {
       price,
       menuId
     });
-    res.status(200)
-      .json({
-        status: 'Success',
-        message: 'Successfully added new meals',
-        Meals
-      });
+    res.status(200);
+    res.json({
+      status: 'Success',
+      message: 'Successfully added new meals',
+      Meals
+    });
   }
   static modifyMeal(req, res) {
     const {
