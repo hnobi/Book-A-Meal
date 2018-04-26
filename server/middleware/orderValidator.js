@@ -19,7 +19,6 @@ export default class ValidateOrders {
       price,
       quantity, totalPrice, mealId, menuId
     } = req.body;
-
     const errors = {};
     if (price === undefined || quantity === undefined || totalPrice === undefined || mealId === undefined || menuId === undefined) {
       res.status(400);
@@ -68,5 +67,53 @@ export default class ValidateOrders {
       }
       next();
     }
+  }
+  //
+  /**
+   *
+   *
+   * @static
+   * @param {any} req
+   * @param {obj} res
+   * @param {any} next
+   * @returns
+   * @memberof ValidateOrders
+   */
+  static modifyOrderValidator(req, res, next) {
+    const {
+      price,
+      quantity, totalPrice, mealId, menuId
+    } = req.body;
+    const errors = {};
+    if (!validator.isEmpty(price)) {
+      if (!validator.isNumeric(price)) {
+        errors.price = 'price of ordered meal must be a number';
+      }
+    }
+    if (!validator.isEmpty(quantity)) {
+      if (!validator.isNumeric(quantity)) {
+        errors.quantity = 'quantity of order must be a number';
+      }
+    }
+    if (!validator.isEmpty(totalPrice)) {
+      if (!validator.isNumeric(totalPrice)) {
+        errors.totalPrice = 'totalPrice of ordered meal must be a number';
+      }
+    }
+    if (!validator.isEmpty(mealId)) {
+      if (!validator.isNumeric(mealId)) {
+        errors.mealId = 'mealId of ordered meal must be a number';
+      }
+    }
+    if (!validator.isEmpty(menuId)) {
+      if (!validator.isNumeric(menuId)) {
+        errors.menuId = 'menuId of ordered meal must be a number';
+      }
+    }
+    if (!isEmpty(errors)) {
+      return res.status(400)
+        .json(errors);
+    }
+    next();
   }
 }

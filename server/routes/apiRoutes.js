@@ -5,6 +5,7 @@ import OrderController from './../controller/order';
 import ValidateMenu from './../middleware/menuValidator';
 import ValidateMeal from './../middleware/mealValidator';
 import ValidateOrder from './../middleware/orderValidator';
+
 const router = express.Router();
 // menus
 router.route('/menu')
@@ -24,5 +25,5 @@ router.route('/meal/:mealId')
 router.route('/order')
   .post(ValidateOrder.addOrderValidator, OrderController.addOrder);
 router.route('/order/:orderId')
-  .put(OrderController.modifyOrder)
+  .put(ValidateOrder.modifyOrderValidator, OrderController.modifyOrder);
 export default router;

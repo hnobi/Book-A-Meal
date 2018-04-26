@@ -29,19 +29,14 @@ export default class ValidateMenus {
       } else {
         errors.meals = ' meals is required';
       }
-
       if (validator.isEmpty(date)) {
         errors.date = 'date is required';
-
       }
-
-
-
       if (Object.keys(errors).length !== 0) {
         return res.status(400)
           .json(errors);
       }
       next();
     }
-  
+  }
 }
