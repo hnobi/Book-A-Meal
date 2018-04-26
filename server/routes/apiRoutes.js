@@ -23,6 +23,7 @@ router.route('/meal/:mealId')
 
 // order routes
 router.route('/order')
+  .get(OrderController.showAllOrders)
   .post(ValidateOrder.addOrderValidator, OrderController.addOrder);
 router.route('/order/:orderId')
   .put(ValidateOrder.modifyOrderValidator, OrderController.modifyOrder);

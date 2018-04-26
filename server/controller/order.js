@@ -21,6 +21,15 @@ export default class OrderControllers {
       });
   }
 
+  /**
+   * Modify an order
+   * @static
+   * @param {object} req request   the server
+   * @param {object} res    response by  the server
+   * @returns {object} order modified error messages object or
+   * success messages object with order modified data
+   * @memberof OrderControllers
+   */
   static modifyOrder(req, res) {
     const { price, quantity, totalPrice, userId, mealId, menuId } = req.body;
     for (let i = 0; i < Orders.length; i += 1) {
@@ -36,7 +45,7 @@ export default class OrderControllers {
             message: 'Successfully updated  an Order',
             Orders
           });
-          console.log('hi')
+        console.log('hi')
       }
     }
     res.status(400);
@@ -44,5 +53,19 @@ export default class OrderControllers {
       status: 'Failed',
       message: 'Order id does not exist',
     });
+  }
+  /**
+   * Get all the orders
+   * @static
+   * @param {any} req 
+   * @param {object} res return all orders object or error message
+   * @memberof OrderControllers
+   */
+  static showAllOrders(req, res) {
+    if (Orders.length !== 0) {
+      return res.status(200)
+        .json({ Orders })
+    }
+    return res.status(400).json({ message: 'No Order available' });
   }
 }
