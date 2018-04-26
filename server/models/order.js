@@ -26,6 +26,5 @@ const Order = [
     mealId: 1,
     menuId: 3
   }
-
 ];
 export default Order;

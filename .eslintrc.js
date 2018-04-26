@@ -7,6 +7,7 @@ module.exports = {
     "mocha": true
   },
   "rules": {
+    "linebreak-style": 0,
     "one-var": 0,
     "one-var-declaration-per-line": 0,
     "new-cap": 0,
@@ -27,7 +28,6 @@ module.exports = {
         "FunctionDeclaration": true,
         "MethodDefinition": true,
         "ClassDeclaration": true,
-        "constructor": true,
       }
     }]
   }
