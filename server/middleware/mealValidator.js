@@ -29,11 +29,7 @@ export default class ValidateMeals {
       } else {
         errors.description = ' description is required';
       }
-      if (!validator.isEmpty(price)) {
-        if (!validator.isNumeric(price)) {
-          errors.price = 'price of a meal must be a number';
-        }
-      } else {
+      if (validator.isEmpty(price)) {
         errors.price = 'price is required';
       }
       if (Object.keys(errors).length !== 0) {
@@ -60,11 +56,12 @@ export default class ValidateMeals {
     }
     //validating price
     if (price) {
-      if (!validator.isNumeric(price)) {
-        errors.price = 'price of a meal must be a number';
+      if (typeof (price) !== 'number') {
+        errors.price = 'price of meal must be a number';
       }
     }
     if (Object.keys(errors).length !== 0) {
+
       return res.status(400)
         .json(errors);
     }
