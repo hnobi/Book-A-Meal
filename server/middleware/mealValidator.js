@@ -1,4 +1,5 @@
 import validator from 'validator';
+import isNumber from 'is-number';
 
 export default class ValidateMeals {
   static addMealValidator(req, res, next) {
@@ -29,9 +30,11 @@ export default class ValidateMeals {
       } else {
         errors.description = ' description is required';
       }
-      if (validator.isEmpty(price)) {
-        errors.price = 'price is required';
-      }
+      if (price !== '') {
+        if (!(isNumber(price))) {
+          errors.price = 'price of meal must be a number';
+        }
+      } else { errors.price = 'price of meal is required'; }
       if (Object.keys(errors).length !== 0) {
         return res.status(400)
           .json(errors);
@@ -42,26 +45,25 @@ export default class ValidateMeals {
   static modifyMealValidator(req, res, next) {
     const { title, description, price } = req.body;
     const errors = {};
-    //validating meal title
+    // validating meal title
     if (title) {
       if (!validator.isLength(title, { min: 3, max: 20 })) {
         errors.title = 'Title of meal must be more than 2 characters but less than 20';
       }
     }
-    //validating meal description
+    // validating meal description
     if (description) {
       if (!validator.isLength(description, { min: 25, max: undefined })) {
         errors.description = 'meal description must not be less than 25 characters';
       }
     }
-    //validating price
+    // validating price
     if (price) {
-      if (typeof (price) !== 'number') {
+      if (!(isNumber(price))) {
         errors.price = 'price of meal must be a number';
       }
     }
     if (Object.keys(errors).length !== 0) {
-
       return res.status(400)
         .json(errors);
     }
