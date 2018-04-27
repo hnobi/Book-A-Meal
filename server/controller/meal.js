@@ -52,14 +52,19 @@ export default class MealControllers {
     for (let i = 0; i < Meals.length; i += 1) {
       if (Meals[i].id === parseInt(req.params.mealId, 10)) {
         Meals.splice(i, 1);
-        res.status(200);
-        res.json({
-          status: 'Success',
-          message: 'Successfully deleted meal',
-          Meals
-        });
+        return res.status(200)
+          .json({
+            status: 'Success',
+            message: 'Successfully deleted meal',
+            Meals
+          });
       }
     }
+    return res.status(400)
+      .json({
+        status: 'Failed',
+        message: 'Meal id does not exist',
+      });
   }
   /**
    *

@@ -1,5 +1,5 @@
-import validator from 'validator';
 
+import isNumber from 'is-number';
 import isEmpty from 'lodash/isEmpty';
 /**
  *validate all order
@@ -26,40 +26,41 @@ export default class ValidateOrders {
         message: 'All or some of the field is/are undefined',
       });
     } else {
-      if (!validator.isEmpty(price)) {
-        if (!validator.isNumeric(price)) {
-          errors.price = 'price of ordered meal must be a number';
+      if (price !== '') {
+        if (!(isNumber(price))) {
+          errors.price = 'price of meal must be a number';
         }
       } else {
-        errors.price = 'price of order is required';
+        errors.price = 'price of meal is required';
       }
-      if (!validator.isEmpty(quantity)) {
-        if (!validator.isNumeric(quantity)) {
-          errors.quantity = 'quantity of order must be a number';
+      if (quantity !== '') {
+        if (!(isNumber(quantity))) {
+          errors.quantity = 'quantity of meal must be a number';
         }
       } else {
-        errors.quantity = 'quatity of order is required';
+        errors.quantity = 'quantity of meal is required';
       }
-      if (!validator.isEmpty(totalPrice)) {
-        if (!validator.isNumeric(totalPrice)) {
-          errors.totalPrice = 'totalPrice of ordered meal must be a number';
+
+      if (totalPrice !== '') {
+        if (!(isNumber(totalPrice))) {
+          errors.totalPrice = 'totalPrice of meal must be a number';
         }
       } else {
-        errors.totalPrice = 'totalPrice of order is required';
+        errors.totalPrice = 'totalPrice of meal is required';
       }
-      if (!validator.isEmpty(mealId)) {
-        if (!validator.isNumeric(mealId)) {
-          errors.mealId = 'mealId of ordered meal must be a number';
+      if (mealId !== '') {
+        if (!(isNumber(mealId))) {
+          errors.mealId = 'mealId of meal must be a number';
         }
       } else {
-        errors.mealId = 'mealId of order is required';
+        errors.mealId = 'mealId of meal is required';
       }
-      if (!validator.isEmpty(menuId)) {
-        if (!validator.isNumeric(menuId)) {
-          errors.menuId = 'menuId of ordered meal must be a number';
+      if (menuId !== '') {
+        if (!(isNumber(menuId))) {
+          errors.menuId = 'menuId of  must be a number';
         }
       } else {
-        errors.menuId = 'menuId of order is required';
+        errors.menuId = 'menuId  is required';
       }
       if (!isEmpty(errors)) {
         return res.status(400)
@@ -85,32 +86,33 @@ export default class ValidateOrders {
       quantity, totalPrice, mealId, menuId
     } = req.body;
     const errors = {};
-    if (!validator.isEmpty(price)) {
-      if (!validator.isNumeric(price)) {
-        errors.price = 'price of ordered meal must be a number';
+    if (price !== '') {
+      if (!(isNumber(price))) {
+        errors.price = 'price of meal must be a number';
       }
     }
-    if (!validator.isEmpty(quantity)) {
-      if (!validator.isNumeric(quantity)) {
-        errors.quantity = 'quantity of order must be a number';
+    if (quantity) {
+      if (!(isNumber(quantity))) {
+        errors.quantity = 'quantity of meal must be a number';
       }
     }
-    if (!validator.isEmpty(totalPrice)) {
-      if (!validator.isNumeric(totalPrice)) {
-        errors.totalPrice = 'totalPrice of ordered meal must be a number';
+
+    if (totalPrice) {
+      if (!(isNumber(totalPrice))) {
+        errors.totalPrice = 'totalPrice of meal must be a number';
       }
     }
-    if (!validator.isEmpty(mealId)) {
-      if (!validator.isNumeric(mealId)) {
-        errors.mealId = 'mealId of ordered meal must be a number';
+    if (mealId) {
+      if (!(isNumber(mealId))) {
+        errors.mealId = 'mealId of meal must be a number';
       }
     }
-    if (!validator.isEmpty(menuId)) {
-      if (!validator.isNumeric(menuId)) {
-        errors.menuId = 'menuId of ordered meal must be a number';
+    if (menuId) {
+      if (!(isNumber(menuId))) {
+        errors.menuId = 'menuId of  must be a number';
       }
     }
-    if (!isEmpty(errors)) {
+    if (Object.keys(errors).length !== 0) {
       return res.status(400)
         .json(errors);
     }
