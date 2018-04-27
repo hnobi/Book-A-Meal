@@ -64,7 +64,7 @@ export default class OrderControllers {
   static showAllOrders(req, res) {
     if (Orders.length !== 0) {
       return res.status(200)
-        .json({ Orders })
+        .json(Orders)
     }
     return res.status(400).json({ message: 'No Order available' });
   }
