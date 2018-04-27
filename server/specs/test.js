@@ -126,8 +126,7 @@ describe('All test cases for Book-A-Meal application', () => {
         });
     });
     it('should return `400` status code with `res.body` error message', (done) => {
-      request
-        .put('/api/v1/meal/10')
+      request.put('/api/v1/meal/10')
         .set('Content-Type', 'application/json')
         .send({
           title: 'rice',
@@ -139,6 +138,139 @@ describe('All test cases for Book-A-Meal application', () => {
         .end((err, res) => {
           expect(res.body.status).to.equal('Failed');
           expect(res.body.message).to.equal('Meal id does not exist');
+          if (err) done(err);
+          done();
+        });
+    });
+  });
+
+  describe('All test cases for deleting a meal', () => {
+    it('should return `200` status code with `res.body` success messages', (done) => {
+      request
+        .delete('/api/v1/meal/1')
+        .set('Content-Type', 'application/json')
+        .expect(200)
+        .end((err, res) => {
+          expect('Success').to.equal(res.body.status);
+          expect('Successfully deleted meal').to.equal(res.body.message);
+          if (err) done(err);
+          done();
+        });
+    });
+    it('should return `400` status code with `res.body` error message', (done) => {
+      request.delete('/api/v1/meal/10')
+        .set('Content-Type', 'application/json')
+        .expect(400)
+        .end((err, res) => {
+          expect(res.body.status).to.equal('Failed');
+          expect(res.body.message).to.equal('Meal id does not exist');
+          if (err) done(err);
+          done();
+        });
+    });
+  });
+  describe('All test case for adding meal', () => {
+    it('shouild return `200` status code with `res.body success message', (done) => {
+      request.post('/api/v1/meal')
+        .set('Content-Type', 'application/json')
+        .send({
+          title: 'beans cake',
+          description: ' nice creamy with a good taste',
+          price: 100,
+          menuId: 2
+        })
+        .expect(200)
+        .end((err, res) => {
+          expect(res.body.status).to.equal('Success');
+          expect(res.body.message).to.equal('Successfully added new meals');
+          if (err) done(err);
+          done();
+        });
+    });
+  });
+  describe('Test case for getting all orders', () => {
+    it('Should list all available orders', (done) => {
+      request.get('/api/v1/order')
+        .set('Content-Type', 'application/json')
+        .expect(200)
+        .end((err, res) => {
+          expect(res.body).to.be.a('array');
+          if (err) done(err);
+          done();
+        });
+    });
+  });
+
+  describe('All test case for adding orders', () => {
+    it('shouild return `200` status code with `res.body success message', (done) => {
+      request.post('/api/v1/order')
+        .set('Content-Type', 'application/json')
+        .send({
+          price: 500,
+          quantity: 3,
+          totalPrice: 1500,
+          userId: 4,
+          mealId: 2,
+          menuId: 4
+        })
+        .expect(200)
+        .end((err, res) => {
+          expect(res.body.status).to.equal('Success');
+          expect(res.body.message).to.equal('Successfully added new Orders');
+          if (err) done(err);
+          done();
+        });
+    });
+    it('shouild return `400` status code with `res.body error message', (done) => {
+      request.post('/api/v1/order')
+        .set('Content-Type', 'application/json')
+        .send({})
+        .expect(400)
+        .end((err, res) => {
+          expect(res.body).deep.equal({
+            message: 'All or some of the field is/are undefined'
+          });
+          if (err) done(err);
+          done();
+        });
+    });
+  });
+  describe('All test cases for updating an order', () => {
+    it('should return `200` status code with `res.body` success messages', (done) => {
+      request
+        .put('/api/v1/order/1')
+        .set('Content-Type', 'application/json')
+        .send({
+          price: 500,
+          quantity: 3,
+          totalPrice: 1500,
+          userId: 4,
+          mealId: 2,
+          menuId: 4
+        })
+        .expect(200)
+        .end((err, res) => {
+          expect('Success').to.equal(res.body.status);
+          expect('Successfully updated  an Order').to.equal(res.body.message);
+          if (err) done(err);
+          done();
+        });
+    });
+    it('should return `400` status code with `res.body` error message', (done) => {
+      request.put('/api/v1/order/10')
+        .set('Content-Type', 'application/json')
+        .send({
+          price: 500,
+          quantity: 3,
+          totalPrice: 1500,
+          userId: 4,
+          mealId: 2,
+          menuId: 4
+        })
+        .expect(400)
+        .end((err, res) => {
+          expect(res.body.status).to.equal('Failed');
+          expect(res.body.message).to.equal('Order id does not exist');
           if (err) done(err);
           done();
         });
