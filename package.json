@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "nodemon --watch server --exec babel-node -- server/app.js",
-    "test": "mocha --timeout 500000 --exit --compilers js:babel-core/register  server/specs/",
-    "cover": "istanbul cover _mocha"
+    "test": "nyc --reporter=html --reporter=text mocha --reporter=lcov --timeout 500000 --exit --compilers js:babel-core/register  server/specs/",
   },
   "repository": {
     "type": "git",
@@ -33,10 +32,13 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "coveralls": "^3.0.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.11.0",
     "istanbul": "^0.4.5",
-    "nodemon": "^1.17.3"
+    "mocha-lcov-reporter": "^1.3.0",
+    "nodemon": "^1.17.3",
+    "nyc": "^11.7.1"
   }
 }
