@@ -2,8 +2,7 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/hnobi/Book-A-Meal/badge.svg?branch=develop)](https://coveralls.io/github/hnobi/Book-A-Meal?branch=develop)
 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/da5f656c5e34fa1363b5/test_coverage)](https://codeclimate.com/github/hnobi/Book-A-Meal/test_coverage)
-
+[![Code Climate](https://codeclimate.com/github/hnobi/Book-A-Meal/badges/gpa.svg)](https://codeclimate.com/github/hnobi/Book-A-Meal)
 
 
 #Book-A-Meal
