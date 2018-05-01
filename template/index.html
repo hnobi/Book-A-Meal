@@ -21,9 +21,9 @@
             <li>
               <a href="#home" class="active">Home</a>
             </li>
-            <li>
-              <a href="menu.html">Order meal</a>
-            </li>
+            <!-- <li>
+              <a href="menu.html">Order meal<
+            </li> -->
             <li>
               <a id="btn1">Login</a>
             </li>
@@ -88,7 +88,7 @@
           </div>
         </div>
       </div>
-      <!--  -->
+      <!---=========Second row of  cards begin   ============ -->
       <div class="row">
         <div class="col-4">
           <div class="card">
@@ -139,7 +139,7 @@
 
   <div id="signin" class="modal">
     <div class="form-sizing">
-      <form class="content" action="/signin" method="post">
+      <form class="content" action="menu.html" method="post">
         <h2>Sign in</h2>
         <div class="container">
           <label for="username">
@@ -172,7 +172,7 @@
 
   <div id="signup" class="modal">
     <div style="max-width: 500px;margin:auto">
-      <form class="content" action="/signup" method="post">
+      <form class="content" action="menu.html" method="post">
         <h2>Sign up</h2>
         <div class="container">
           <label for="firstname">
@@ -183,7 +183,7 @@
           <label for="lastname">
             <b>Lastname</b>
           </label>
-          <input type="password" placeholder="Lastname" name="lastname">
+          <input type="text" placeholder="Lastname" name="lastname">
           <label for="username">
             <b>Username</b>
           </label>
@@ -192,8 +192,12 @@
             <b>Password</b>
           </label>
           <input type="password" placeholder="Enter Password" name="password" required>
+          <label for="user">Customer</label>
+          <input type="radio" name="user">
+          <label for="caterer">Caterer</label>
+          <input type="radio" name="user">
 
-          <button type="submit">Login</button>
+          <button type="submit">Sign up</button>
           <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
           </label>
@@ -206,14 +210,6 @@
     </div>
   </div>
   <!-- =========================modal signup ends ============================-->
-
-
-
-
-
-
-
-
   <script src="public/js/signin_signup.js"> </script>
 </body>
 

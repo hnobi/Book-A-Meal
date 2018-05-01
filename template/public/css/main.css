@@ -81,14 +81,14 @@ line-height: 40px;
 }
 .edit-btn{
   background-color:green;
-  width:  40%;
+ max-width:  40%;
   margin-top:5px;  
   float: left;
   border-radius: 5px;
   }
 .delete-btn{
   background-color:rgb(221, 41, 41);
-  width:  40%;
+ max-width:  40%;
   margin-top:5px; 
   float: right; 
   border-radius: 5px;
@@ -100,7 +100,10 @@ line-height: 40px;
     background-color:#555;
     color:white;
   }
-
+a.edit-btn{
+  
+  
+}
 
 
 
@@ -145,7 +148,6 @@ line-height: 40px;
     padding: 10px 32px;
     text-align: center;
     text-decoration: none;
-    /* display: inline-block; */
     font-size: 16px;
     cursor: pointer;
 }
@@ -163,15 +165,15 @@ footer {
   background-color:white;
   color:gray;
   text-align: center;
+  
 
 }
 hr{
   border-style: solid;
   border-color:rgb(31, 29, 29);
-  margin-top:50px;
-  margin-bottom: 20px; 
+  margin-top:150px;
+  margin-bottom: 10px; 
 }
-
 .fluid{
   width:100%;
   margin:0 auto;
@@ -237,19 +239,7 @@ font-family: 'Courier New', Courier, monospace;
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-
-
-hr{
-  border-style: solid;
-  border-color:rgb(31, 29, 29);
-  margin-top:50px;
-  margin-bottom: 20px; 
-}
-
-
-
 /*==================Reuseable CSS Ends==================== */
-
 
 /* =========================================|Navbar|============================================== */
 .navbar-brand{
@@ -287,7 +277,7 @@ nav ul li{
   text-decoration: none;
   color: white;
   text-transform: uppercase;
-   font-size: 16px;                                     /*[18/20 *100] 20px is html font i used */
+   font-size: 16px;                                    
   padding: 14px 16px; 
   font-weight: bold;
 
@@ -345,17 +335,7 @@ background-color: rgb(243, 232, 232);
   margin:auto;
 }
 
-/* .form-input{
-  background-color:teal;
-  width:50%;
-  margin:0 auto;
-} */
 
-/* .form-input input{
-  max-width:100%;
-  f;
-  color:rgb(202, 110, 34);
-  height:40px */
 .form-sizing{
   max-width: 500px;
   margin:auto;
@@ -402,17 +382,14 @@ input[type="submit"]{
 }
 
 td a{
-  color:red;
-  text-decoration: none;
+  color:green;
     font-weight: bolder; 
 }
 td a:hover{
-  color:green;
+  color:rgb(0, 70, 128);
   text-decoration: none;
     font-weight: bolder; 
 }
-
-
 /* forms end */
 
 /* big tablet -   */
@@ -442,6 +419,8 @@ td a:hover{
    margin: 100px  auto;
   
   }
+
+  
  .col-9 .col-4{
   width: 100%;
   margin:0 auto 0 45px;
@@ -455,30 +434,33 @@ input[type="submit"]{
 /* small phone - less than 480px */
 @media screen and (max-width: 480px){
  .col-2,.col-9 , .col-4 {width: 100%;}
-   
-  nav ul li {
-    float: none;
-    margin-left: 0;
+ nav{
+   height: 100px;
+}
+  nav ul  {
+    float: left;
+    margin :0;
     display: block;
-    text-align: center;
-    margin-top:5px;
-    padding: 2px;
+    padding: 0;
+    
   }
 
   .navbar-brand{
-    float: right;
-    display: block;
-    font-size: 30px;
+    font-size: 20px;
     font-style: oblique;
   font-weight: bold;
+  /* float: left; */
   }
   .menu-sidenav{
     position: relative;
      width:100%;
      margin-top:10px auto ;
-
-
   }
+  nav ul li a{
+     font-size: 11px;                                    
+    padding: 14px 6px; 
+    
+  } 
   .selected-day{
    margin:0 auto; 
   }
@@ -494,6 +476,9 @@ input[type="submit"]{
   }
   input[type="submit"]{
     width:90%;
-   
   }
+    
+     .headline{
+font-size: 20px
+    }
 }
