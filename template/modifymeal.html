@@ -30,9 +30,6 @@
             <li>
               <a href="select-meal.html">Select Meal</a>
             </li>
-            <li>
-              <a href="order_summary.html">Order summary</a>
-            </li>
           </ul>
         </div>
       </nav>
@@ -54,11 +51,6 @@
           <a href="addmeal.html" style="text-decoration:none;">
             <h2 class="btn add-btn">Add meal</h2>
           </a>
-
-
-
-
-
           <!-- =================================Photo of meals ================================================ -->
           <div class="col-4 deem-color">
             <div class="card">
@@ -74,7 +66,9 @@
                   <span>&#8358;</span> 999.00
                 </p>
                 <div>
+
                   <button class="btn edit-btn" id="edit">Edit</button>
+
                   <button class="btn delete-btn">Delete</button>
                 </div>
               </div>
@@ -124,7 +118,7 @@
               </div>
             </div>
           </div>
-          <!--  -->
+          <!---=========Second row of cards begin   ============ -->
           <div class="col-4 deem-color">
             <div class="card">
               <img src="public/img/8.jpg" alt="FIRST" style="width:100%">
@@ -208,7 +202,7 @@
 
   <div id="editModal" class="modal">
     <div class="form-sizing">
-      <form class="content" action="/signin" method="post">
+      <form class="content" action="modifymeal.html" method="put">
         <h2>Edit Meal</h2>
         <div class="container">
           <input type="text" placeholder="Meal title" name="title" value="sallad">
@@ -221,7 +215,7 @@
       </form>
     </div>
   </div>
-  <!-- =========================modal edit ends ============================-->
+  <!-- =========================modal edit ends ===========================-->
 
 
   <script src="public/js/main.js"> 

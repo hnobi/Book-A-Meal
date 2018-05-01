@@ -23,7 +23,7 @@
               <a href="menu.html">Menu</a>
             </li>
             <li>
-              <a href="modifymeal.html">Add Meal</a>
+              <a href="addmeal.html">Add Meal</a>
             </li>
             <li>
               <a href="order_summary.html">Order summary</a>
@@ -37,72 +37,75 @@
       <main class="non-fluid mt">
         <div class="row">
 
-          <h2 class="headline">Select meal</h2>
-          <div class="col-4">
-            <select>
-              <option value="select-day">select-day</option>
-              <option value="monday">Monday</option>
-              <option value="tuesday">Tuesday</option>
-              <option value="wedsnessday">Wedsnessday</option>
-              <option value="thursday">Thursday</option>
-              <option value="friday">Friday</option>
-              <option value="saturday">Saturday</option>
-              <option value="sunday">Sunday</option>
+          <h2 class="headline">Set menu for a specific day</h2>
+          <form action="menu.html" method="POST">
+            <div class="col-4">
+              <select>
+                <option value="select-day">select-day</option>
+                <option value="monday">Monday</option>
+                <option value="tuesday">Tuesday</option>
+                <option value="wedsnessday">Wedsnessday</option>
+                <option value="thursday">Thursday</option>
+                <option value="friday">Friday</option>
+                <option value="saturday">Saturday</option>
+                <option value="sunday">Sunday</option>
+              </select>
+              <input id="month" type="date">
+            </div>
+            <div class="col-8">
+              <table>
+                <tr>
+                  <th>Meals</th>
+                  <th>Select</th>
+                </tr>
+                <tr>
+                  <td>
+                    <img src="public/img/13.jpg" alt="" style="width:100px;height:50px; ">Friend rice
+                  </td>
+                  <td>
+                    <input type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
 
-            </select>
-          </div>
-          <div class="col-8">
-            <table>
-              <tr>
-                <th>Meals</th>
-                <th>Select</th>
-              </tr>
-              <tr>
-                <td>
-                  <img src="public/img/13.jpg" alt="" style="width:100px;height:50px; ">Friend rice</td>
-                <td>
-                  <input type="checkbox">
-                </td>
-              </tr>
-              <tr>
-                <td>
-
-                  <img src="public/img/5.jpg" alt="" style="width:100px;height:50px; ">Salad</td>
-                <td>
-                  <input type="checkbox">
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img src="public/img/13.jpg" alt="" style="width:100px;height:50px; ">Friend rice</td>
-                <td>
-                  <input type="checkbox">
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img src="public/img/1.jpg" alt="" style="width:100px;height:50px; ">Ofada rice</td>
-                <td>
-                  <input type="checkbox">
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img src="public/img/6.jpg" alt="" style="width:100px;height:50px; ">Amala</td>
-                <td>
-                  <input type="checkbox">
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img src="public/img/8.jpg" alt="" style="width:100px;height:50px; ">Friend rice</td>
-                <td>
-                  <input type="checkbox">
-                </td>
-              </tr>
-            </table>
-          </div>
-          <button class="btn update-btn">Save</button>
+                    <img src="public/img/5.jpg" alt="" style="width:100px;height:50px; ">Salad</td>
+                  <td>
+                    <input type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src="public/img/13.jpg" alt="" style="width:100px;height:50px; ">Friend rice</td>
+                  <td>
+                    <input type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src="public/img/1.jpg" alt="" style="width:100px;height:50px; ">Ofada rice</td>
+                  <td>
+                    <input type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src="public/img/6.jpg" alt="" style="width:100px;height:50px; ">Amala</td>
+                  <td>
+                    <input type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src="public/img/8.jpg" alt="" style="width:100px;height:50px; ">Friend rice</td>
+                  <td>
+                    <input type="checkbox">
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <button class="btn update-btn" type="submit" value="Submit">Save</button>
+          </form>
         </div>
       </main>
     </div>
