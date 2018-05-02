@@ -85,7 +85,7 @@ export default class ValidateOrders {
       price,
       quantity, totalPrice, mealId, menuId
     } = req.body;
-    const errors = {};
+    const messages = [];
     if (price !== '') {
       if (!(isNumber(price))) {
         messages.push('price of meal must be a number');
