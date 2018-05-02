@@ -75,10 +75,14 @@ export default class MealControllers {
    * @returns
    * @memberof MealControllers
    */
-  static showAllMealMeal(req, res) {
+  static showAllMeals(req, res) {
     if (Meals.length !== 0) {
       return res.status(200)
-        .json(Meals);
+        .json({
+          status: 'Success',
+          message: 'Successfully retrived all available meals',
+          Meals
+        });
     }
     return res.status(400).json({ message: 'No events available' });
   }

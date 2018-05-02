@@ -86,7 +86,9 @@ describe('All test cases for Book-A-Meal application', () => {
         .set('Content-Type', 'application/json')
         .expect(200)
         .end((err, res) => {
-          expect(res.body).to.be.a('array');
+          expect(res.body).to.be.a('object');
+          expect('Success').to.equal(res.body.status);
+          expect('Successfully retrived all available menus').to.equal(res.body.message);
           if (err) done(err);
           done();
         });
@@ -98,7 +100,9 @@ describe('All test cases for Book-A-Meal application', () => {
         .set('Content-Type', 'application/json')
         .expect(200)
         .end((err, res) => {
-          expect(res.body).to.be.a('array');
+          expect(res.body).to.be.a('object');
+          expect('Success').to.equal(res.body.status);
+          expect('Successfully retrived all available meals').to.equal(res.body.message);
           if (err) done(err);
           done();
         });
@@ -194,7 +198,9 @@ describe('All test cases for Book-A-Meal application', () => {
         .set('Content-Type', 'application/json')
         .expect(200)
         .end((err, res) => {
-          expect(res.body).to.be.a('array');
+          expect(res.body).to.be.a('object');
+          expect('Success').to.equal(res.body.status);
+          expect('Successfully retrived all available orders').to.equal(res.body.message);
           if (err) done(err);
           done();
         });

@@ -10,11 +10,11 @@ const router = express.Router();
 // menus
 router.route('/menu')
   .post(ValidateMenu.addMenuValidator, MenuController.addMenu)
-  .get(MenuController.showAllMenu);
+  .get(MenuController.showAllMenus);
 // meal routes
 router.route('/meal')
   .post(ValidateMeal.addMealValidator, MealController.addMeal)
-  .get(MealController.showAllMealMeal);
+  .get(MealController.showAllMeals);
 
 
 router.route('/meal/:mealId')

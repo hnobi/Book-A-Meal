@@ -38,7 +38,7 @@ export default class OrderControllers {
         Orders[i].quantity = (quantity) || Orders[i].quantity;
         Orders[i].price = (totalPrice) || Orders[i].totalPrice;
         Orders[i].mealId = (mealId) || Orders[i].mealId;
-        Orders[i].mealId = (menuId) || Orders[i].menuId;
+        Orders[i].menuId = (menuId) || Orders[i].menuId;
         return res.status(200)
           .json({
             status: 'Success',
@@ -64,7 +64,10 @@ export default class OrderControllers {
   static showAllOrders(req, res) {
     if (Orders.length !== 0) {
       return res.status(200)
-        .json(Orders)
+        .json({
+          status: 'Success',
+          message: 'Successfully retrived all available orders',Orders
+        })
     }
     return res.status(400).json({ message: 'No Order available' });
   }

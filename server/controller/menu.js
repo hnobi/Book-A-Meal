@@ -38,10 +38,13 @@ export default class MenusControllers {
    * @returns success with the list of all available menu or error
    * @memberof MenusControllers
    */
-  static showAllMenu(req, res) {
+  static showAllMenus(req, res) {
     if (Menus.length !== 0) {
       return res.status(200)
-        .json(Menus);
+        .json({
+          status: 'Success',
+          message: 'Successfully retrived all available menus', Menus
+        });
     }
     return res.status(400).json({ message: 'No Menu available' });
   }

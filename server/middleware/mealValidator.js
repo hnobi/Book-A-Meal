@@ -18,14 +18,14 @@ export default class ValidateMeals {
     } else {
       if (!validator.isEmpty(title)) {
         if (!validator.isLength(title, { min: 3, max: 20 })) {
-          errors.title = 'Title of meal must be 3 characters but less than 20';
+          message = 'Title of meal must be 3 characters but less than 20';
         }
       } else {
-        errors.title = 'Title of meal is required';
+        message = 'Title of meal is required';
       }
       if (!validator.isEmpty(description)) {
         if (!validator.isLength(description, { min: 20, max: undefined })) {
-          errors.description = 'description must not be less than 20 characters';
+          message = 'description must not be less than 20 characters';
         }
       } else {
         errors.description = ' description is required';
