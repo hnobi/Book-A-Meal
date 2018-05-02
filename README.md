@@ -6,5 +6,23 @@
 
 
 #Book-A-Meal
-Book-A-Meal is an application that allows customers to make food orders and helps the food
-vendor know what the customers want to eat.
+## Book-A-Meal is an application that allows customers to make food orders and helps the food vendor know what the customers want to eat.
+link to Book-A-Book (https://github.com/hnobi/Book-A-Meal/tree/develop) to get started.
+##installation
+install node (https://nodejs.org/en/)
+install git (https://git-scm.com/download/win)
+
+### clone the repo 
+type: git clone https://github.com/hnobi/Book-A-Meal/tree/develop
+
+### Start the App
+npm install 
+
+npm run start:dev
+
+### Run test
+npm test
+
+##Built With
+nodeljs
+

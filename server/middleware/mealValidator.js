@@ -1,5 +1,6 @@
 import validator from 'validator';
 import isNumber from 'is-number';
+import { SSL_OP_NETSCAPE_CHALLENGE_BUG } from 'constants';
 
 export default class ValidateMeals {
   static addMealValidator(req, res, next) {
@@ -9,63 +10,63 @@ export default class ValidateMeals {
       price
     } = req.body;
 
-    const errors = {};
+    let messages = [];
     if (title === undefined || description === undefined || price === undefined) {
       res.status(400)
         .json({
-          message: 'All or some of the field is/are undefined',
+          message :'All or some of the field is/are undefined',
         });
     } else {
       if (!validator.isEmpty(title)) {
         if (!validator.isLength(title, { min: 3, max: 20 })) {
-          message = 'Title of meal must be 3 characters but less than 20';
+          messages.push('Title of meal must be 3 characters but less than 20');
         }
       } else {
-        message = 'Title of meal is required';
+        messages.push('Title of meal is required');
       }
       if (!validator.isEmpty(description)) {
         if (!validator.isLength(description, { min: 20, max: undefined })) {
-          message = 'description must not be less than 20 characters';
+          messages.push('description must not be less than 20 characters');
         }
       } else {
-        errors.description = ' description is required';
+        messages.push(' description is required');
       }
       if (price !== '') {
         if (!(isNumber(price))) {
-          errors.price = 'price of meal must be a number';
+          messages.push('price of meal must be a number');
         }
       } else { errors.price = 'price of meal is required'; }
-      if (Object.keys(errors).length !== 0) {
+      if (messages.length !== 0) {
         return res.status(400)
-          .json(errors);
+          .json({messages});
       }
       next();
     }
   }
   static modifyMealValidator(req, res, next) {
     const { title, description, price } = req.body;
-    const errors = {};
-    // validating meal title
+    const messages =[];
+    // validating meal title length 
     if (title) {
       if (!validator.isLength(title, { min: 3, max: 20 })) {
-        errors.title = 'Title of meal must be more than 2 characters but less than 20';
+        messages.push('Title of meal must be more than 2 characters but less than 20');
       }
     }
-    // validating meal description
+    // validating meal description length
     if (description) {
       if (!validator.isLength(description, { min: 25, max: undefined })) {
-        errors.description = 'meal description must not be less than 25 characters';
+        messages.push('meal description must not be less than 25 characters');
       }
     }
-    // validating price
+    // validating price length 
     if (price) {
       if (!(isNumber(price))) {
-        errors.price = 'price of meal must be a number';
+        messages.push('price of meal must be a number');
       }
     }
-    if (Object.keys(errors).length !== 0) {
+    if (messages.length !== 0) {
       return res.status(400)
-        .json(errors);
+        .json({messages});
     }
     next();
   }
