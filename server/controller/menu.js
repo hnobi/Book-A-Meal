@@ -2,12 +2,11 @@ import Menus from './../models/menu';
 
 export default class MenusControllers {
   /**
-  * add menu to the existing events
-                       * @param {obj} req
-                       * @param {obj} res
-                       * @memberof MenusController
-                       * @return {obj} insertion error messages or success messages
- * @class MenusControllers
+  * Add menu to the existing events
+  * @param {obj} req
+  * @param {obj} res
+  * @memberof MenusController
+  * @return {obj} insertion error messages or success messages
  */
   static addMenu(req, res) {
     const newId = Menus[Menus.length - 1].id + 1;
@@ -30,12 +29,10 @@ export default class MenusControllers {
       });
   }
   /**
-   * 
-   * 
    * @static
    * @param {any} req 
    * @param {any} res 
-   * @returns success with the list of all available menu or error
+   * @returns success message with the list of all available menu or error message
    * @memberof MenusControllers
    */
   static showMenu(req, res) {
