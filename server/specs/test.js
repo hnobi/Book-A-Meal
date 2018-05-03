@@ -50,7 +50,7 @@ describe('All test cases for Book-A-Meal application', () => {
     });
   });
   describe('All test cases for adding menu for the day', () => {
-    it('Should  create a menu for a specific day and return `201` status code', (done) => {
+    it('Should  create a menu for a specific day and return `201` status code when a Menu is added', (done) => {
       request.post('/api/v1/menu')
         .set('Content-Type', 'application/json')
         .send({
@@ -66,7 +66,7 @@ describe('All test cases for Book-A-Meal application', () => {
           done();
         });
     });
-    it('Should  return `400` status code with error message', (done) => {
+    it('Should  return `400` status code with error message when any of the form field is undefined', (done) => {
       request.post('/api/v1/menu')
         .set('Content-Type', 'application/json')
         .send({})
@@ -81,7 +81,7 @@ describe('All test cases for Book-A-Meal application', () => {
     });
   });
   describe('Test cases for getting all menu', () => {
-    it('Should get all menus', (done) => {
+    it('Should get all menus with `200` status code', (done) => {
       request.get('/api/v1/menu')
         .set('Content-Type', 'application/json')
         .expect(200)
@@ -95,7 +95,7 @@ describe('All test cases for Book-A-Meal application', () => {
     });
   });
   describe('Test case for getting all meal', () => {
-    it('Should list all available meal', (done) => {
+    it('Should list all available meal with `200` status code', (done) => {
       request.get('/api/v1/meal')
         .set('Content-Type', 'application/json')
         .expect(200)
@@ -111,7 +111,7 @@ describe('All test cases for Book-A-Meal application', () => {
 
 
   describe('All test cases for updating a meal', () => {
-    it('should return `200` status code with `res.body` success messages', (done) => {
+    it('should return `200` status code with `res.body` success messages when a meal is modified', (done) => {
       request
         .put('/api/v1/meal/1')
         .set('Content-Type', 'application/json')
@@ -129,7 +129,7 @@ describe('All test cases for Book-A-Meal application', () => {
           done();
         });
     });
-    it('should return `400` status code with `res.body` error message', (done) => {
+    it('should return `400` status code with `res.body` error message when the id does not exist', (done) => {
       request.put('/api/v1/meal/10')
         .set('Content-Type', 'application/json')
         .send({
@@ -149,7 +149,7 @@ describe('All test cases for Book-A-Meal application', () => {
   });
 
   describe('All test cases for deleting a meal', () => {
-    it('should return `200` status code with `res.body` success messages', (done) => {
+    it('should return `200` status code with `res.body` success messages when a meal is deleted', (done) => {
       request
         .delete('/api/v1/meal/1')
         .set('Content-Type', 'application/json')
@@ -161,7 +161,7 @@ describe('All test cases for Book-A-Meal application', () => {
           done();
         });
     });
-    it('should return `400` status code with `res.body` error message', (done) => {
+    it('should return `400` status code with `res.body` error message when Meal id does not exist', (done) => {
       request.delete('/api/v1/meal/10')
         .set('Content-Type', 'application/json')
         .expect(400)
@@ -174,7 +174,7 @@ describe('All test cases for Book-A-Meal application', () => {
     });
   });
   describe('All test case for adding meal', () => {
-    it('shouild return `200` status code with `res.body success message', (done) => {
+    it('shouild return `200` status code with `res.body success message when a meal added', (done) => {
       request.post('/api/v1/meal')
         .set('Content-Type', 'application/json')
         .send({
@@ -193,7 +193,7 @@ describe('All test cases for Book-A-Meal application', () => {
     });
   });
   describe('Test case for getting all orders', () => {
-    it('Should list all available orders', (done) => {
+    it('Should list all available orders with status code `200`', (done) => {
       request.get('/api/v1/order')
         .set('Content-Type', 'application/json')
         .expect(200)
@@ -208,7 +208,7 @@ describe('All test cases for Book-A-Meal application', () => {
   });
 
   describe('All test case for adding orders', () => {
-    it('shouild return `200` status code with `res.body success message', (done) => {
+    it('shouild return `200` status code with `res.body success message when an order is added', (done) => {
       request.post('/api/v1/order')
         .set('Content-Type', 'application/json')
         .send({
@@ -227,7 +227,7 @@ describe('All test cases for Book-A-Meal application', () => {
           done();
         });
     });
-    it('shouild return `400` status code with `res.body error message', (done) => {
+    it('shouild return `400` status code with `res.body error message when no order is added', (done) => {
       request.post('/api/v1/order')
         .set('Content-Type', 'application/json')
         .send({})
@@ -242,7 +242,7 @@ describe('All test cases for Book-A-Meal application', () => {
     });
   });
   describe('All test cases for updating an order', () => {
-    it('should return `200` status code with `res.body` success messages', (done) => {
+    it('should return `200` status code with `res.body` success messages when an order is modified', (done) => {
       request
         .put('/api/v1/order/1')
         .set('Content-Type', 'application/json')
@@ -262,7 +262,7 @@ describe('All test cases for Book-A-Meal application', () => {
           done();
         });
     });
-    it('should return `400` status code with `res.body` error message', (done) => {
+    it('should return `400` status code with `res.body` error message when order id does not exist', (done) => {
       request.put('/api/v1/order/10')
         .set('Content-Type', 'application/json')
         .send({
