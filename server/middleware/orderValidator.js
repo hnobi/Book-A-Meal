@@ -19,7 +19,7 @@ export default class ValidateOrders {
       price,
       quantity, totalPrice, mealId, menuId
     } = req.body;
-    const errors = {};
+    const messages = [];
     if (price === undefined || quantity === undefined || totalPrice === undefined || mealId === undefined || menuId === undefined) {
       res.status(400);
       res.json({
@@ -28,43 +28,43 @@ export default class ValidateOrders {
     } else {
       if (price !== '') {
         if (!(isNumber(price))) {
-          errors.price = 'price of meal must be a number';
+           messages.push('price of meal must be a number');
         }
       } else {
-        errors.price = 'price of meal is required';
+        messages.push('price of meal is required');
       }
       if (quantity !== '') {
         if (!(isNumber(quantity))) {
-          errors.quantity = 'quantity of meal must be a number';
+          messages.push('quantity of meal must be a number');
         }
       } else {
-        errors.quantity = 'quantity of meal is required';
+        messages.push('quantity of meal is required');
       }
 
       if (totalPrice !== '') {
         if (!(isNumber(totalPrice))) {
-          errors.totalPrice = 'totalPrice of meal must be a number';
+          messages.push('totalPrice of meal must be a number');
         }
       } else {
-        errors.totalPrice = 'totalPrice of meal is required';
+        ('totalPrice of meal is required');
       }
       if (mealId !== '') {
         if (!(isNumber(mealId))) {
-          errors.mealId = 'mealId of meal must be a number';
+          messages.push('mealId of meal must be a number');
         }
       } else {
-        errors.mealId = 'mealId of meal is required';
+        messages.push('mealId of meal is required');
       }
       if (menuId !== '') {
         if (!(isNumber(menuId))) {
           errors.menuId = 'menuId of  must be a number';
         }
       } else {
-        errors.menuId = 'menuId  is required';
+        messages.push('menuId  is required');
       }
-      if (!isEmpty(errors)) {
+      if (messages.length !==0) {
         return res.status(400)
-          .json(errors);
+          .json({messages});
       }
       next();
     }
@@ -88,33 +88,33 @@ export default class ValidateOrders {
     const errors = {};
     if (price !== '') {
       if (!(isNumber(price))) {
-        errors.price = 'price of meal must be a number';
+        messages.push('price of meal must be a number');
       }
     }
     if (quantity) {
       if (!(isNumber(quantity))) {
-        errors.quantity = 'quantity of meal must be a number';
+        messages.push('quantity of meal must be a number');
       }
     }
 
     if (totalPrice) {
       if (!(isNumber(totalPrice))) {
-        errors.totalPrice = 'totalPrice of meal must be a number';
+        messages.push('totalPrice of meal must be a number');
       }
     }
     if (mealId) {
       if (!(isNumber(mealId))) {
-        errors.mealId = 'mealId of meal must be a number';
+        messages.push('mealId of meal must be a number');
       }
     }
     if (menuId) {
       if (!(isNumber(menuId))) {
-        errors.menuId = 'menuId of  must be a number';
+        messages.push('menuId of  must be a number');
       }
     }
-    if (Object.keys(errors).length !== 0) {
+    if (messages.length !== 0) {
       return res.status(400)
-        .json(errors);
+        .json({messages});
     }
     next();
   }
