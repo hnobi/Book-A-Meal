@@ -6,7 +6,7 @@ import Meals from './../models/meal';
  */
 export default class MealControllers {
   /**
-  * @static Add meal to the existing events
+  * @static Add meal
    * @param {obj} req
    * @param {obj} res
    * @returns {obj} insertion error messages or success messages
@@ -35,7 +35,7 @@ export default class MealControllers {
       });
   }
   /**
-  * @static Modify meal to the existing events
+  * @static Modify meal
    * @param {obj} req
    * @param {obj} res
    * @returns {obj} insertion error messages or success messages
@@ -66,7 +66,7 @@ export default class MealControllers {
     });
   }
   /**
-  * @static Delete meal to the existing events
+  * @static Delete meal
    * @param{obj} req
    * @param {obj} res
    * @returns{obj} insertion error messages or success messages
@@ -108,6 +108,6 @@ export default class MealControllers {
           Meals
         });
     }
-    return res.status(400).json({ message: 'No events available' });
+    return res.status(400).json({ message: 'No available' });
   }
 }

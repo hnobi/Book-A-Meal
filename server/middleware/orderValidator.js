@@ -28,7 +28,7 @@ export default class ValidateOrders {
     } else {
       if (price !== '') {
         if (!(isNumber(price))) {
-           messages.push('price of meal must be a number');
+          messages.push('price of meal must be a number');
         }
       } else {
         messages.push('price of meal is required');
@@ -62,9 +62,9 @@ export default class ValidateOrders {
       } else {
         messages.push('menuId  is required');
       }
-      if (messages.length !==0) {
+      if (messages.length !== 0) {
         return res.status(400)
-          .json({messages});
+          .json({ messages });
       }
       next();
     }
@@ -77,7 +77,7 @@ export default class ValidateOrders {
    * @param {any} req
    * @param {obj} res
    * @param {any} next
-   * @returns
+  * @returns error message or call the next middleware function
    * @memberof ValidateOrders
    */
   static modifyOrderValidator(req, res, next) {
@@ -114,7 +114,7 @@ export default class ValidateOrders {
     }
     if (messages.length !== 0) {
       return res.status(400)
-        .json({messages});
+        .json({ messages });
     }
     next();
   }

@@ -2,7 +2,7 @@ import Menus from './../models/menu';
 
 export default class MenusControllers {
   /**
-  * Add menu to the existing events
+  * Add menu to existing one 
   * @param {obj} req
   * @param {obj} res
   * @memberof MenusController

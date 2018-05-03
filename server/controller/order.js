@@ -1,9 +1,21 @@
 import Orders from './../models/order';
-
+/**
+ * @export
+ * @class OrderControllers
+ */
 export default class OrderControllers {
+  /**
+  * Add order to the existing ones
+  * @param {obj} req
+  * @param {obj} res
+  * @memberof MenusController
+  * @return {obj} insertion error messages or success messages
+ */
   static addOrder(req, res) {
     const newId = Orders[Orders.length - 1].id + 1;
-    const { price, quantity, totalPrice, userId, mealId, menuId } = req.body;
+    const {
+      price, quantity, totalPrice, userId, mealId, menuId
+    } = req.body;
     Orders.push({
       id: newId,
       price,
@@ -31,7 +43,9 @@ export default class OrderControllers {
    * @memberof OrderControllers
    */
   static modifyOrder(req, res) {
-    const { price, quantity, totalPrice, userId, mealId, menuId } = req.body;
+    const {
+      price, quantity, totalPrice, mealId, menuId
+    } = req.body;
     for (let i = 0; i < Orders.length; i += 1) {
       if (Orders[i].id === parseInt(req.params.orderId, 10)) {
         Orders[i].price = (price) || Orders[i].price;
@@ -45,7 +59,6 @@ export default class OrderControllers {
             message: 'Successfully updated  an Order',
             Orders
           });
-        console.log('hi')
       }
     }
     res.status(400);
@@ -66,7 +79,7 @@ export default class OrderControllers {
       return res.status(200)
         .json({
           status: 'Success',
-          message: 'Successfully retrived all available orders',Orders
+          message: 'Successfully retrived all available orders', Orders
         })
     }
     return res.status(400).json({ message: 'No Order available' });
