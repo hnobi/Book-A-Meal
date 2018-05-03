@@ -1,6 +1,17 @@
 import Meals from './../models/meal';
-
+/**
+ * Class  for /api/vi/meal routes
+ * @export
+ * @class MealControllers
+ */
 export default class MealControllers {
+  /**
+  * @static Add meal to the existing events
+   * @param {obj} req
+   * @param {obj} res
+   * @returns {obj} insertion error messages or success messages
+   * @memberof MealControllers
+   */
   static addMeal(req, res) {
     const newId = Meals[Meals.length - 1].id + 1;
     const {
@@ -23,6 +34,13 @@ export default class MealControllers {
         Meals
       });
   }
+  /**
+  * @static Modify meal to the existing events
+   * @param {obj} req
+   * @param {obj} res
+   * @returns {obj} insertion error messages or success messages
+   * @memberof MealControllers
+   */
   static modifyMeal(req, res) {
     const {
       title, description, price, menuId
@@ -47,7 +65,13 @@ export default class MealControllers {
       message: 'Meal id does not exist',
     });
   }
-
+  /**
+  * @static Delete meal to the existing events
+   * @param{obj} req
+   * @param {obj} res
+   * @returns{obj} insertion error messages or success messages
+   * @memberof MealControllers
+   */
   static deleteMeal(req, res) {
     for (let i = 0; i < Meals.length; i += 1) {
       if (Meals[i].id === parseInt(req.params.mealId, 10)) {
@@ -69,7 +93,7 @@ export default class MealControllers {
   /**
    *
    *
-   * @static showAllMealMea display all available or  read error mesage
+   * @static showAllMeal all available o  read error message
    * @param {any} req
    * @param {any} res
    * @returns
