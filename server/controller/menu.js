@@ -1,8 +1,10 @@
 import menuData from './../models/menu';
-
+/**
+ * @export
+ * @class menuDataControllers
+ */
 export default class menuDataControllers {
   /**
-  * Add menu to existing one 
   * @param {obj} req
   * @param {obj} res
   * @memberof menuDataController
@@ -24,19 +26,18 @@ export default class menuDataControllers {
     return res.status(201)
       .json({
         status: 'Success',
-        message: 'Successfully added new menuData',
+        message: 'Successfully added new menus',
         menuData
       });
   }
   /**
-   * @static
-   * @param {any} req 
-   * @param {any} res 
-   * @returns success message with the list of all available menu or error message
+   * @param {obj} req
+   * @param {obj} res
+   * @returns {obj} success message with the list of all available menu or error message
    * @memberof menuDataControllers
    */
   static showMenu(req, res) {
-    for (let i = 0; i < menuData.length; i = i + 1) {
+    for (let i = 0; i < menuData.length; i += 1) {
       if (menuData[i].id === parseInt(req.params.menuId, 10)) {
         return res.status(200)
           .json({
@@ -46,17 +47,10 @@ export default class menuDataControllers {
           });
       }
     }
-    res.status(400)
+    res.status(404)
       .json({
         status: 'failed',
         message: 'menu  id does not exist',
       });
   }
-
-
 }
-
-
-
-
-
