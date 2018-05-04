@@ -1,4 +1,4 @@
-import Orders from './../models/order';
+import orderData from './../models/order';
 /**
  * @export
  * @class OrderControllers
@@ -12,11 +12,11 @@ export default class OrderControllers {
   * @return {obj} insertion error messages or success messages
  */
   static addOrder(req, res) {
-    const newId = Orders[Orders.length - 1].id + 1;
+    const newId = orderData[orderData.length - 1].id + 1;
     const {
-      price, quantity, totalPrice, userId, mealId, menuId
+      price, quantity, totalPrice, userId, mealId
     } = req.body;
-    Orders.push({
+    orderData.push({
       id: newId,
       price,
       quantity,
@@ -28,16 +28,15 @@ export default class OrderControllers {
       .json({
         status: 'Success',
         message: 'Successfully added new Orders',
-        Orders
+        orderData
       });
   }
 
   /**
    * Modify an order
-   * @static
    * @param {object} req request   the server
    * @param {object} res    response by  the server
-   * @returns {object} order modified error messages object or
+   * @returns {object} order modified error messages object or success message
    * success messages object with order modified data
    * @memberof OrderControllers
    */
@@ -45,17 +44,17 @@ export default class OrderControllers {
     const {
       price, quantity, totalPrice, mealId
     } = req.body;
-    for (let i = 0; i < Orders.length; i += 1) {
-      if (Orders[i].id === parseInt(req.params.orderId, 10)) {
-        Orders[i].price = (price) || Orders[i].price;
-        Orders[i].quantity = (quantity) || Orders[i].quantity;
-        Orders[i].price = (totalPrice) || Orders[i].totalPrice;
-        Orders[i].mealId = (mealId) || Orders[i].mealId;
+    for (let i = 0; i < orderData.length; i += 1) {
+      if (orderData[i].id === parseInt(req.params.orderId, 10)) {
+        orderData[i].price = (price) || orderData[i].price;
+        orderData[i].quantity = (quantity) || orderData[i].quantity;
+        orderData[i].price = (totalPrice) || orderData[i].totalPrice;
+        orderData[i].mealId = (mealId) || orderData[i].mealId;
         return res.status(200)
           .json({
             status: 'Success',
             message: 'Successfully updated  an Order',
-            Orders
+            orderData
           });
       }
     }
@@ -67,20 +66,20 @@ export default class OrderControllers {
   }
   /**
    * Get all the orders
-   * @static
-   * @param {any} req 
+   * @param {any} req
    * @param {object} res return all orders object or error message
+   * @returns {object} order modified error messages object or
    * @memberof OrderControllers
    */
   static showAllOrders(req, res) {
-    if (Orders.length !== 0) {
-      for (let i = 0; i < Orders.length; i++) {
-        Orders.Total = Orders[i].price * Orders.quantity;
+    if (orderData.length !== 0) {
+      for (let i = 0; i < orderData.length; i += 1) {
+        orderData.Total = orderData[i].price * orderData.quantity;
         return res.status(200)
           .json({
             status: 'Success',
             message: 'Successfully retrived all available orders',
-            Orders
+            orderData
           });
       }
     }

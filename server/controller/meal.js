@@ -1,4 +1,4 @@
-import Meals from './../models/meal';
+import mealData from './../models/meal';
 /**
  * Class  for /api/vi/meal routes
  * @export
@@ -13,14 +13,14 @@ export default class MealControllers {
    * @memberof MealControllers
    */
   static addMeal(req, res) {
-    const newId = Meals[Meals.length - 1].id + 1;
+    const newId = mealData[mealData.length - 1].id + 1;
     const {
       title,
       description,
       price,
       menuId
     } = req.body;
-    Meals.push({
+    mealData.push({
       id: newId,
       title,
       description,
@@ -30,8 +30,8 @@ export default class MealControllers {
     return res.status(200)
       .json({
         status: 'Success',
-        message: 'Successfully added new meals',
-        Meals
+        message: 'Successfully added new mealData',
+        mealData
       });
   }
   /**
@@ -45,17 +45,17 @@ export default class MealControllers {
     const {
       title, description, price, menuId
     } = req.body;
-    for (let i = 0; i < Meals.length; i += 1) {
-      if (Meals[i].id === parseInt(req.params.mealId, 10)) {
-        Meals[i].title = (title) || Meals[i].title;
-        Meals[i].description = (description) || Meals[i].description;
-        Meals[i].menuId = (menuId) || Meals[i].menuId;
-        Meals[i].price = (price) || Meals[i].price;
+    for (let i = 0; i < mealData.length; i += 1) {
+      if (mealData[i].id === parseInt(req.params.mealId, 10)) {
+        mealData[i].title = (title) || mealData[i].title;
+        mealData[i].description = (description) || mealData[i].description;
+        mealData[i].menuId = (menuId) || mealData[i].menuId;
+        mealData[i].price = (price) || mealData[i].price;
         return res.status(200)
           .json({
             status: 'Success',
             message: 'Successfully updated  a Meal',
-            Meals,
+            mealData,
           });
       }
     }
@@ -73,14 +73,14 @@ export default class MealControllers {
    * @memberof MealControllers
    */
   static deleteMeal(req, res) {
-    for (let i = 0; i < Meals.length; i += 1) {
-      if (Meals[i].id === parseInt(req.params.mealId, 10)) {
-        Meals.splice(i, 1);
+    for (let i = 0; i < mealData.length; i += 1) {
+      if (mealData[i].id === parseInt(req.params.mealId, 10)) {
+        mealData.splice(i, 1);
         return res.status(200)
           .json({
             status: 'Success',
             message: 'Successfully deleted meal',
-            Meals
+            mealData
           });
       }
     }
@@ -100,12 +100,12 @@ export default class MealControllers {
    * @memberof MealControllers
    */
   static showAllMeals(req, res) {
-    if (Meals.length !== 0) {
+    if (mealData.length !== 0) {
       return res.status(200)
         .json({
           status: 'Success',
-          message: 'Successfully retrived all available meals',
-          Meals
+          message: 'Successfully retrived all available mealData',
+          mealData
         });
     }
     return res.status(400).json({ message: 'No available' });
