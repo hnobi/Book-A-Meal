@@ -36,15 +36,27 @@ export default class MenusControllers {
    * @memberof MenusControllers
    */
   static showMenu(req, res) {
-    if (Menus.length !== 0) {
-      return res.status(200)
-        .json({
-          status: 'Success',
-          message: 'Successfully retrived all available menus', Menus
-        });
+    for (let i = 0; i < Menus.length; i = i + 1) {
+      if (Menus[i].id === parseInt(req.params.menuId, 10)) {
+        return res.status(200)
+          .json({
+            status: 'Success',
+            message: 'Successfully  available menu for the day',
+            Menu: Menus[i],
+          });
+      }
     }
-    return res.status(400).json({ message: 'No Menu available' });
+    res.status(400)
+      .json({
+        status: 'failed',
+        message: 'menu  id does not exist',
+      });
   }
 
 
 }
+
+
+
+
+
