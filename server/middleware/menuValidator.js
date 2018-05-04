@@ -31,7 +31,7 @@ export default class ValidateMenus {
       } else {
         messages.push('Title of menu is required');
       }
-      if (!validator.isEmpty(meals)) {
+      if (validator.isEmpty(meals)) {
         messages.push(' meals is required');
       }
       if (validator.isEmpty(date)) {
