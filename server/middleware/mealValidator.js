@@ -4,10 +4,9 @@ import isNumber from 'is-number';
 export default class ValidateMeals {
   /**
   * Validates addMeal before allowing access to controller class
-   * @static
-   * @param {any} req 
-   * @param {any} res 
-   * @param {any} next 
+   * @param {any} req
+   * @param {any} res
+   * @param {any} next
    * @returns validation error messages object or contents of request.body object
    * @memberof ValidateMeals
    */
@@ -18,7 +17,7 @@ export default class ValidateMeals {
       price
     } = req.body;
 
-    let messages = [];
+    const messages = [];
     if (title === undefined || description === undefined || price === undefined) {
       res.status(400)
         .json({
@@ -53,16 +52,16 @@ export default class ValidateMeals {
   }
   /**
    * @static * Validates updateMeal before allowing access to controller class
-   * @param {any} req 
-   * @param {any} res 
-   * @param {any} next 
+   * @param {any} req
+   * @param {any} res
+   * @param {any} next
    * @returns validation error messages object or contents of request.body object
    * @memberof ValidateMeals
    * */
   static modifyMealValidator(req, res, next) {
     const { title, description, price } = req.body;
     const messages = [];
-    // validating meal title length 
+    // validating meal title length
     if (title) {
       if (!validator.isLength(title, { min: 3, max: 20 })) {
         messages.push('Title of meal must be more than 2 characters but less than 20');
@@ -74,7 +73,7 @@ export default class ValidateMeals {
         messages.push('meal description must not be less than 25 characters');
       }
     }
-    // validating price length 
+    // validating price length
     if (price) {
       if (!(isNumber(price))) {
         messages.push('price of meal must be a number');

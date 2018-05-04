@@ -2,11 +2,10 @@ import validator from 'validator';
 
 export default class ValidateMenus {
   /**
-  * Validates addmenu details before allowing access to controller class
-   * @static
-   * @param {any} req 
-   * @param {any} res 
-   * @param {any} next 
+   * Validates addmenu details before allowing access to controller class
+   * @param {any} req
+   * @param {any} res
+   * @param {any} next
    * @returns validation error messages object or contents of request.body object
    * @memberof ValidateMenus
    */
@@ -18,6 +17,7 @@ export default class ValidateMenus {
     } = req.body;
 
     const messages = [];
+
     if (title === undefined || meals === undefined || date === undefined) {
       res.status(400)
         .json({
