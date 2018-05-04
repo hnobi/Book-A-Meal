@@ -20,7 +20,7 @@ export default class ValidateOrders {
       quantity, totalPrice, mealId, menuId
     } = req.body;
     const messages = [];
-    if (price === undefined || quantity === undefined || totalPrice === undefined || mealId === undefined || menuId === undefined) {
+    if (price === undefined || quantity === undefined || totalPrice === undefined || mealId === undefined) {
       res.status(400);
       res.json({
         message: 'All or some of the field is/are undefined',
@@ -54,13 +54,6 @@ export default class ValidateOrders {
         }
       } else {
         messages.push('mealId of meal is required');
-      }
-      if (menuId !== '') {
-        if (!(isNumber(menuId))) {
-          errors.menuId = 'menuId of  must be a number';
-        }
-      } else {
-        messages.push('menuId  is required');
       }
       if (messages.length !== 0) {
         return res.status(400)
@@ -105,11 +98,6 @@ export default class ValidateOrders {
     if (mealId) {
       if (!(isNumber(mealId))) {
         messages.push('mealId of meal must be a number');
-      }
-    }
-    if (menuId) {
-      if (!(isNumber(menuId))) {
-        messages.push('menuId of  must be a number');
       }
     }
     if (messages.length !== 0) {

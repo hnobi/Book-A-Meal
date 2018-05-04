@@ -22,8 +22,7 @@ export default class OrderControllers {
       quantity,
       totalPrice,
       userId,
-      mealId,
-      menuId
+      mealId
     });
     res.status(200)
       .json({
@@ -44,7 +43,7 @@ export default class OrderControllers {
    */
   static modifyOrder(req, res) {
     const {
-      price, quantity, totalPrice, mealId, menuId
+      price, quantity, totalPrice, mealId
     } = req.body;
     for (let i = 0; i < Orders.length; i += 1) {
       if (Orders[i].id === parseInt(req.params.orderId, 10)) {
@@ -52,7 +51,6 @@ export default class OrderControllers {
         Orders[i].quantity = (quantity) || Orders[i].quantity;
         Orders[i].price = (totalPrice) || Orders[i].totalPrice;
         Orders[i].mealId = (mealId) || Orders[i].mealId;
-        Orders[i].menuId = (menuId) || Orders[i].menuId;
         return res.status(200)
           .json({
             status: 'Success',
@@ -76,11 +74,15 @@ export default class OrderControllers {
    */
   static showAllOrders(req, res) {
     if (Orders.length !== 0) {
-      return res.status(200)
-        .json({
-          status: 'Success',
-          message: 'Successfully retrived all available orders', Orders
-        })
+      for (let i = 0; i < Orders.length; i++) {
+        Orders.Total = Orders[i].price * Orders.quantity;
+        return res.status(200)
+          .json({
+            status: 'Success',
+            message: 'Successfully retrived all available orders',
+            Orders
+          });
+      }
     }
     return res.status(400).json({ message: 'No Order available' });
   }

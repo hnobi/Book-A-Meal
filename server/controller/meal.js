@@ -25,9 +25,9 @@ export default class MealControllers {
       title,
       description,
       price,
-      menuId
+      menuId,
     });
-    res.status(200)
+    return res.status(200)
       .json({
         status: 'Success',
         message: 'Successfully added new meals',

@@ -52,7 +52,7 @@ export default class ValidateMeals {
     }
   }
   /**
-   * @static * Validates aupdateMeal before allowing access to controller class
+   * @static * Validates updateMeal before allowing access to controller class
    * @param {any} req 
    * @param {any} res 
    * @param {any} next 

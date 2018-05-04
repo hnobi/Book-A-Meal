@@ -3,7 +3,7 @@ const Order = [
     id: 1,
     price: 500,
     quantity: 3,
-    totalPrice: 1500,
+    totalPrice: 500 * 3,
     userId: 4,
     mealId: 2,
     menuId: 4

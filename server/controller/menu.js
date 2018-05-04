@@ -12,7 +12,6 @@ export default class MenusControllers {
     const newId = Menus[Menus.length - 1].id + 1;
     const {
       title,
-      id,
       meals,
       date
     } = req.body;

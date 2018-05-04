@@ -32,10 +32,6 @@ export default class ValidateMenus {
         messages.push('Title of menu is required');
       }
       if (!validator.isEmpty(meals)) {
-        if (!validator.isLength(meals, { min: 20, max: undefined })) {
-          messages.push('meals must not be less than 20 characters');
-        }
-      } else {
         messages.push(' meals is required');
       }
       if (validator.isEmpty(date)) {

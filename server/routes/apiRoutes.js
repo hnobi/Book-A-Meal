@@ -9,15 +9,16 @@ import ValidateOrder from './../middleware/orderValidator';
 const router = express.Router();
 // menus
 router.route('/menu')
-  .post(ValidateMenu.addMenuValidator, MenuController.addMenu)
+  .post(ValidateMenu.addMenuValidator, MenuController.addMenu);
+router.route('/menu/:menuId')
   .get(MenuController.showMenu);
 // meal routes
-router.route('/meal')
+router.route('/meals')
   .post(ValidateMeal.addMealValidator, MealController.addMeal)
   .get(MealController.showAllMeals);
 
 
-router.route('/meal/:mealId')
+router.route('/meals/:mealId')
   .put(ValidateMeal.modifyMealValidator, MealController.modifyMeal)
   .delete(MealController.deleteMeal);
 
