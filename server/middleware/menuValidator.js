@@ -1,6 +1,15 @@
 import validator from 'validator';
 
 export default class ValidateMenus {
+  /**
+  * Validates addmenu details before allowing access to controller class
+   * @static
+   * @param {any} req 
+   * @param {any} res 
+   * @param {any} next 
+   * @returns validation error messages object or contents of request.body object
+   * @memberof ValidateMenus
+   */
   static addMenuValidator(req, res, next) {
     const {
       title,
@@ -23,10 +32,6 @@ export default class ValidateMenus {
         messages.push('Title of menu is required');
       }
       if (!validator.isEmpty(meals)) {
-        if (!validator.isLength(meals, { min: 20, max: undefined })) {
-          messages.push('meals must not be less than 20 characters');
-        }
-      } else {
         messages.push(' meals is required');
       }
       if (validator.isEmpty(date)) {
@@ -34,7 +39,7 @@ export default class ValidateMenus {
       }
       if (messages.length !== 0) {
         return res.status(400)
-          .json({messages});
+          .json({ messages });
       }
       next();
     }

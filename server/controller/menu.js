@@ -2,18 +2,16 @@ import Menus from './../models/menu';
 
 export default class MenusControllers {
   /**
-  * add menu to the existing events
-                       * @param {obj} req
-                       * @param {obj} res
-                       * @memberof MenusController
-                       * @return {obj} insertion error messages or success messages
- * @class MenusControllers
+  * Add menu to existing one 
+  * @param {obj} req
+  * @param {obj} res
+  * @memberof MenusController
+  * @return {obj} insertion error messages or success messages
  */
   static addMenu(req, res) {
     const newId = Menus[Menus.length - 1].id + 1;
     const {
       title,
-      id,
       meals,
       date
     } = req.body;
@@ -30,24 +28,34 @@ export default class MenusControllers {
       });
   }
   /**
-   * 
-   * 
    * @static
    * @param {any} req 
    * @param {any} res 
-   * @returns success with the list of all available menu or error
+   * @returns success message with the list of all available menu or error message
    * @memberof MenusControllers
    */
-  static showAllMenus(req, res) {
-    if (Menus.length !== 0) {
-      return res.status(200)
-        .json({
-          status: 'Success',
-          message: 'Successfully retrived all available menus', Menus
-        });
+  static showMenu(req, res) {
+    for (let i = 0; i < Menus.length; i = i + 1) {
+      if (Menus[i].id === parseInt(req.params.menuId, 10)) {
+        return res.status(200)
+          .json({
+            status: 'Success',
+            message: 'Successfully  available menu for the day',
+            Menu: Menus[i],
+          });
+      }
     }
-    return res.status(400).json({ message: 'No Menu available' });
+    res.status(400)
+      .json({
+        status: 'failed',
+        message: 'menu  id does not exist',
+      });
   }
 
 
 }
+
+
+
+
+

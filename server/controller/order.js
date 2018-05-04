@@ -1,17 +1,28 @@
 import Orders from './../models/order';
-
+/**
+ * @export
+ * @class OrderControllers
+ */
 export default class OrderControllers {
+  /**
+  * Add order to the existing ones
+  * @param {obj} req
+  * @param {obj} res
+  * @memberof MenusController
+  * @return {obj} insertion error messages or success messages
+ */
   static addOrder(req, res) {
     const newId = Orders[Orders.length - 1].id + 1;
-    const { price, quantity, totalPrice, userId, mealId, menuId } = req.body;
+    const {
+      price, quantity, totalPrice, userId, mealId, menuId
+    } = req.body;
     Orders.push({
       id: newId,
       price,
       quantity,
       totalPrice,
       userId,
-      mealId,
-      menuId
+      mealId
     });
     res.status(200)
       .json({
@@ -31,21 +42,21 @@ export default class OrderControllers {
    * @memberof OrderControllers
    */
   static modifyOrder(req, res) {
-    const { price, quantity, totalPrice, userId, mealId, menuId } = req.body;
+    const {
+      price, quantity, totalPrice, mealId
+    } = req.body;
     for (let i = 0; i < Orders.length; i += 1) {
       if (Orders[i].id === parseInt(req.params.orderId, 10)) {
         Orders[i].price = (price) || Orders[i].price;
         Orders[i].quantity = (quantity) || Orders[i].quantity;
         Orders[i].price = (totalPrice) || Orders[i].totalPrice;
         Orders[i].mealId = (mealId) || Orders[i].mealId;
-        Orders[i].menuId = (menuId) || Orders[i].menuId;
         return res.status(200)
           .json({
             status: 'Success',
             message: 'Successfully updated  an Order',
             Orders
           });
-        console.log('hi')
       }
     }
     res.status(400);
@@ -63,11 +74,15 @@ export default class OrderControllers {
    */
   static showAllOrders(req, res) {
     if (Orders.length !== 0) {
-      return res.status(200)
-        .json({
-          status: 'Success',
-          message: 'Successfully retrived all available orders',Orders
-        })
+      for (let i = 0; i < Orders.length; i++) {
+        Orders.Total = Orders[i].price * Orders.quantity;
+        return res.status(200)
+          .json({
+            status: 'Success',
+            message: 'Successfully retrived all available orders',
+            Orders
+          });
+      }
     }
     return res.status(400).json({ message: 'No Order available' });
   }

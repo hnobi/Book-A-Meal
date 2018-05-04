@@ -7,7 +7,6 @@ module.exports = {
     "mocha": true
   },
   "rules": {
-    "linebreak-style": 0,
     "one-var": 0,
     "one-var-declaration-per-line": 0,
     "new-cap": 0,
@@ -15,7 +14,7 @@ module.exports = {
     "no-param-reassign": 0,
     "comma-dangle": 0,
     "curly": ["error", "multi-line"],
-    "import/no-unresolved": [2, { commonjs: true }],
+    "import/no-unresolved": [2, { "commonjs": true }],
     "no-shadow": ["error", { "allow": ["req", "res", "err"] }],
     "valid-jsdoc": ["error", {
       "requireReturn": true,
@@ -27,7 +26,7 @@ module.exports = {
       "require": {
         "FunctionDeclaration": true,
         "MethodDefinition": true,
-        "ClassDeclaration": true,
+        "ClassDeclaration": true
       }
     }]
   }

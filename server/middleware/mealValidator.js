@@ -1,8 +1,16 @@
 import validator from 'validator';
 import isNumber from 'is-number';
-import { SSL_OP_NETSCAPE_CHALLENGE_BUG } from 'constants';
 
 export default class ValidateMeals {
+  /**
+  * Validates addMeal before allowing access to controller class
+   * @static
+   * @param {any} req 
+   * @param {any} res 
+   * @param {any} next 
+   * @returns validation error messages object or contents of request.body object
+   * @memberof ValidateMeals
+   */
   static addMealValidator(req, res, next) {
     const {
       title,
@@ -14,7 +22,7 @@ export default class ValidateMeals {
     if (title === undefined || description === undefined || price === undefined) {
       res.status(400)
         .json({
-          message :'All or some of the field is/are undefined',
+          message: 'All or some of the field is/are undefined',
         });
     } else {
       if (!validator.isEmpty(title)) {
@@ -38,14 +46,22 @@ export default class ValidateMeals {
       } else { errors.price = 'price of meal is required'; }
       if (messages.length !== 0) {
         return res.status(400)
-          .json({messages});
+          .json({ messages });
       }
       next();
     }
   }
+  /**
+   * @static * Validates updateMeal before allowing access to controller class
+   * @param {any} req 
+   * @param {any} res 
+   * @param {any} next 
+   * @returns validation error messages object or contents of request.body object
+   * @memberof ValidateMeals
+   * */
   static modifyMealValidator(req, res, next) {
     const { title, description, price } = req.body;
-    const messages =[];
+    const messages = [];
     // validating meal title length 
     if (title) {
       if (!validator.isLength(title, { min: 3, max: 20 })) {
@@ -66,7 +82,7 @@ export default class ValidateMeals {
     }
     if (messages.length !== 0) {
       return res.status(400)
-        .json({messages});
+        .json({ messages });
     }
     next();
   }
