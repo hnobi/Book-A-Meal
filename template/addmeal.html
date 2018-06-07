@@ -11,57 +11,45 @@
 
 <body>
   <div id="wrapper">
-    <header>
-      <nav>
-        <div class="nav-card-container">
-          <a class="navbar-brand" href="index.html">Book-A-Meal</a>
-          <ul class="right">
-            <li>
-              <a href="index.html">Home</a>
-            </li>
-            <li>
-              <a href="menu.html">Menu</a>
-            </li>
-            <li>
-              <a href="modifymeal.html">Modify|Delete Meal</a>
-            </li>
-            <li>
-              <a href="order_summary.html">Order summary</a>
-            </li>
-
-          </ul>
-        </div>
-      </nav>
-    </header>
+    <nav class="nav-container">
+      <div class="t">
+        <a class="navbar-brand" href="index.html">Book-A-Meal</a>
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="menu.html">Menu</a>
+          </li>
+          <li>
+            <a href="modifymeal.html">Modify|Delete Meal</a>
+          </li>
+          <li>
+            <a href="order_summary.html">Order summary</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <div class="mtop center">
-      <main class="non-fluid ">
-        <div class="row">
-          <div class="column-10" styl="background-color: fuchsia">
-            <div>
-              <h1>Add meal</h1>
-              <div class="form-sizing">
-                <form action="/addmeal" method="post" class="form-content">
-                  <br>
-                  <label>Title:</label>
-
-                  <br>
-                  <input type="text" name="title">
-                  <br>
-                  <label>Description:</label>
-                  <br>
-                  <input type="text" name="description">
-                  <br>
-                  <label>Price:</label>
-                  <br>
-                  <input type="text" name="price">
-                  <br>
-                  <br>
-                  <input type="submit" value="Submit">
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
+      <main id="flex-form">
+        <h1>Add meal</h1>
+        <form action="/addmeal" method="post" class="form-content">
+          <br>
+          <label>Title:</label>
+          <br>
+          <input type="text" name="title">
+          <br>
+          <label>Description:</label>
+          <br>
+          <input type="text" name="description">
+          <br>
+          <label>Price:</label>
+          <br>
+          <input type="text" name="price">
+          <br>
+          <br>
+          <input type="submit" value="Submit">
+        </form>
       </main>
     </div>
 
